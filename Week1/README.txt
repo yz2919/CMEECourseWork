@@ -25,3 +25,12 @@ Can convert tiff to .jpg.
 csvtospace.sh
 Can convert csv file into a space separated values file.
 !!!To convert all csv file, please bash csvtospace.sh with “”, i.e. “*.csv”!!!
+
+FirstBiblio.bib
+A citation for the Einstein 1905 parper.
+
+FirstExample.tex
+A TEX file which can create a .pdf of the article.
+
+CompileLaTex.sh
+Compiles LaTex with bibtex.
