@@ -17,7 +17,6 @@ with open('../data/testalign.csv','r') as csvfile:
     seq2 = "".join(i[1])
 
 
-
 seq1 = str(seq1)
 seq2 = str(seq2)
 

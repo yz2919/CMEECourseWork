@@ -84,3 +84,14 @@ for i in range(l1):
 print(my_best_align)
 print(s1)
 print("Best score:", my_best_score)
+
+def main(argv):
+    print(calculate_score(s1, s2, l1, l2, 2))
+    print(my_best_align)
+    print(s1)
+    print("Best score:", my_best_score)
+    return 0
+
+if(__name__ == "__main__"):
+    status = main(sys.argv)
+    sys.exit(status)
