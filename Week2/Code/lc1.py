@@ -9,18 +9,27 @@ birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
 # lists containing the latin names, common names and mean body masses for
 # each species in birds, respectively. 
 
-# (2) Now do the same using conventional loops (you can choose to do this 
-# before 1 !). 
-
-# (1.1) comprehension creating a list containing the latin names.
+# Latin names
 Latin_names = [i[0] for i in birds]
 print(Latin_names)
 
+# Common names
+Common_names = [i[1] for i in birds]
+print(Common_names)
 
-# (1.2) comprehension creating a list containing the common names.
-Common_names = [n for ]
+# Body masses.
+Body_masses = [i[2] for i in birds]
+print(Body_masses)
 
+# (2) Now do the same using conventional loops. 
 
-
-
-# (1.3) comprehension creating a list containing the mean body masses.
+Latin_names = []
+Common_names = []
+Body_masses = []
+for i in birds:
+    Latin_names.append(i[0])
+    Common_names.append(i[1])
+    Body_masses.append(i[2])
+print(Latin_names)
+print(Common_names)
+print(Body_masses)

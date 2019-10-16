@@ -4,6 +4,11 @@ def foo_1(x):
 
 def foo_2(x, y):
     if x > y:
+        return x
+    return y
+    
+def foo_3(x, y, z):
+    if x > y:
         tmp = y
         y = x
         x = tmp
