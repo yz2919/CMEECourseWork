@@ -1,0 +1,48 @@
+\documentclass[a4paper]{article}
+\usepackage{Sweave}
+
+
+\title{Results and Discussion: Autocorrelation in weather}
+\author{Yuqing Zhou}
+\date{23 Oct 2019}
+
+\begin{document}
+ \maketitle
+
+
+
+\section{Results}
+Correlation coefficient of temperature between successive years is 
+\begin{Schunk}
+\begin{Soutput}
+[1] 0.3261697
+\end{Soutput}
+\end{Schunk}
+Correlation coefficient of temperature of random observation is 
+\begin{Schunk}
+\begin{Soutput}
+[1] -0.1247
+\end{Soutput}
+\end{Schunk}
+P value is 
+\begin{Schunk}
+\begin{Soutput}
+[1] -1.382316
+\end{Soutput}
+\end{Schunk}
+The plots are also included:
+
+\begin{center}
+\includegraphics{autocorrelation-005}
+\end{center}
+
+\begin{center}
+\includegraphics{autocorrelation-006}
+\end{center}
+
+\section{Discussion}
+The autocorrelation plot for temperatures of successive years shows a moderate positive autocorrelation. The gradually decreasing autocorrelation is generally linear with noises. The autocorrelation plot for random samples illustrates that there is no significant autocorrelation. Therefore, temperatures of one year are more correlated with the successive years than with random observations.
+
+
+
+\end{document}

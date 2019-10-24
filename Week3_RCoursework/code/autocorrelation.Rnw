@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+\usepackage{Sweave}
+\SweaveOpts{pdf=TRUE}
+
+\title{Results and Discussion: Autocorrelation in weather}
+\author{Yuqing Zhou}
+\date{23 Oct 2019}
+
+\begin{document}
+ \maketitle
+
+<<echo=FALSE>>=
+load("../data/KeyWestAnnualMeanTemperature.RData") 
+Autocorr <- cor(ats$Temp[-100],ats$Temp[-1])
+AutoCorrelation <- acf(ats$Temp, plot = FALSE)
+T_sample <- sample(ats$Temp, 100, replace = FALSE)
+for (i in 10000){
+    cor_sample <- cor(T_sample[-100], T_sample[-1])
+}
+Randomsample <- acf(T_sample, plot = FALSE)
+@
+
+
+\section{Results}
+Correlation coefficient of temperature between successive years is 
+<<echo=FALSE>>=
+Autocorr 
+@
+Correlation coefficient of temperature of random observation is 
+<<echo=FALSE>>=
+cor_sample
+@
+P value is 
+<<echo=FALSE>>=
+(cor_sample-Autocorr)/Autocorr
+@
+The plots are also included:
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+plot(ats, xlab = "Years", ylab = "Temperature", main = "Key West Annual Mean Temperature")
+@
+\end{center}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+par(mfrow = c(2, 2))
+plot(ats$Temp[-100], ats$Temp[-1], xlab = "Temp(t)", ylab = "Temp(t-1)", main = "Temperature Series Correlation")
+abline(lm(ats$Temp[-100] ~ ats$Temp[-1]))
+
+plot(AutoCorrelation, main = "Temperature Series ACF")
+
+plot(T_sample[-100], T_sample[-1], xlab = "Temp(t)", ylab ="Temp(t-1)", main = "Random Correlation")
+abline(lm(T_sample[-100] ~ T_sample[-1]))
+
+plot(Randomsample, main = "Random ACF")
+@
+\end{center}
+
+\section{Discussion}
+The autocorrelation plot for temperatures of successive years shows a moderate positive autocorrelation. The gradually decreasing autocorrelation is generally linear with noises. The autocorrelation plot for random samples illustrates that there is no significant autocorrelation. Therefore, temperatures of one year are more correlated with the successive years than with random observations.
+
+
+
+\end{document}
