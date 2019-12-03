@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Align two DNA sequences from fasta file"""
+"""Align two DNA sequences from fasta file and save all the equally best alignments to `result` directory"""
 __appname__= 'align_seqs_better.py'
 __author__ = 'Yuqing Zhou (yz2919@imperial.ac.uk)'
 __version__ = '0.0.1'

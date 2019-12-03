@@ -4,10 +4,10 @@
 ## Content
 
 ### align_seqs.py
-Aligns two DNA sequence from a .csv file.
+Aligns two DNA sequence from a `.csv` file.
 
 ### align_seq_better.py
-
+Align two DNA sequences from fasta file and save all the equally best alignments to `result` directory.
 
 ### align_seqs_fasta.py
 Aligns two .fasta sequences.

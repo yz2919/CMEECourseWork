@@ -1,6 +1,6 @@
 
-# 2019 CMEECoursework Week1 Yuqing Zhou
-> Topics: Unix, shell scripting, version control with Git,LATEX
+# 2019 CMEE Coursework Week1 Yuqing Zhou
+> Topics: Unix, shell scripting, version control with Git, LaTeX
 
 ## Content
 
