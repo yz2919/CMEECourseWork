@@ -10,7 +10,7 @@ import csv
 seq1 = []
 seq2 = []
 
-with open('../data/testalign.csv','r') as csvfile:
+with open('../Data/testalign.csv','r') as csvfile:
     csvread = csv.reader(csvfile)
     i = list(i for i in csvread)
     seq1 = "".join(i[0])

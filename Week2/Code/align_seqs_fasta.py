@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """ Align two DNA sequences from fasta file"""
+__appname__= 'align_seqs_fasta.py'
 __author__ = 'Yuqing Zhou (yz2919@imperial.ac.uk)'
 __version__ = '0.0.1'
+__license__= 'None'
 
 import sys
 
@@ -22,7 +24,7 @@ if len(sys.argv) == 3:
 
 
 else:
-    path = "../data" 
+    path = "../Data" 
 
     f1 = open(path+"/"+"407228326.fasta", "r") #open 407228326.fasta
     f2 = open(path+"/"+"407228412.fasta", "r") #open 407228412.fasta

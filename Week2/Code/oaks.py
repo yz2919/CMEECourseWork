@@ -1,3 +1,18 @@
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: oasks.py
+# Desc: finds oak trees from a list of species
+# Arguments: 0
+# Date: Oct 2019
+
+"""Finds taxa of oak trees from a list of species"""
+
+__appname__="oaks.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 ## Finds just those taxa that are oak trees from a list of species
 
 taxa = [ 'Quercus robur',
@@ -7,6 +22,7 @@ taxa = [ 'Quercus robur',
          'Quercus petraea',
         ]
 def is_an_oak(name):
+    """find oak"""
     return name.lower().startswith('quercus ')
 
 ##Using for loops

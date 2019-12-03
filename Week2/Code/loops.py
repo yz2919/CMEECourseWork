@@ -1,3 +1,18 @@
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: loops.py
+# Desc: FOR loop and WHILE loop examples
+# Arguments: 0
+# Date: Oct 2019
+
+"""FOR loop and WHILE loop exampels"""
+
+__appname__="loops.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 # FOR loops in Python
 for i in range(5):
     print(i)

@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Some functions modified by using control statements"""
+__appname__ = 'cfexercises.py'
 __author__ = 'Yuqing Zhou (yz2919@imperial.ac.uk)'
 __version__ = '0.0.1'
+__license__ = "None"
 
 import sys
 
 def foo_1(x=4):
-    """Calculated the square root of x"""
+    """Calculate the square root of x"""
     return x ** 0.5
 
 def foo_2(x=3, y=8):
