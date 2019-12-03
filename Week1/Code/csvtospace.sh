@@ -2,7 +2,7 @@
 # Author: Yuqing Zhou yz2919@imperial.ac.uk
 # Script: csvtospace.sh
 # Description: converts a comma separated values file to a space separated values file
-#
+# Arguments: 1
 # Date: Oct 2019
 
 for f in $1;

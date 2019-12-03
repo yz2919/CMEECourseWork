@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: variables.sh
+# Description: Examples of assigning values to variables
+# Arguments: interactive
+# Date: Oct 2019
+
 # Shows the use of variables
 MyVar='some string'
 echo 'the current value of the variable is' $MyVar

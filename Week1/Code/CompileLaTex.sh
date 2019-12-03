@@ -1,4 +1,12 @@
 #!/bin/bash
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: CompileLaTeX.sh
+# Description: Compile LaTeX script with bibliography file into pdf
+# Arguments: 1
+# Date: Oct 2019
+
+
 pdflatex $1.tex
 pdflatex $1.tex
 bibtex $1
