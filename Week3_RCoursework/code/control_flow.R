@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: control_flow.R
+# Desc: examples of code exemplifying control flow tools in R
+# Arguments: 0
+# Date: Oct 2019
+
 ## If statment
 a <- TRUE
 if (a == TRUE){

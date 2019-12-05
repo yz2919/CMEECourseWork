@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: sample.R
+# Desc: sampling a size from a population and using `sapply` and `lapply` to illustrate vectorization
+# Arguments: 0
+# Date: Oct 2019
+
 ######### Functions #########
 
 ## A function to take a smaple of size n from a population "popn" and return its mean

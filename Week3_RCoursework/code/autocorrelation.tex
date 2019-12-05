@@ -9,7 +9,35 @@
 \begin{document}
  \maketitle
 
+\section{Load and plot Rdata}
+\begin{Schunk}
+\begin{Sinput}
+> load("../data/KeyWestAnnualMeanTemperature.RData") 
+\end{Sinput}
+\end{Schunk}
 
+\begin{center}
+\begin{Schunk}
+\begin{Sinput}
+> plot(ats, xlab = "Years", ylab = "Temperature",
++     main = "Key West Annual Mean Temperature")
+\end{Sinput}
+\end{Schunk}
+\includegraphics{autocorrelation-002}
+\end{center}
+
+\section{Correlation of temperature between successive years and random sample}
+\begin{Schunk}
+\begin{Sinput}
+> Autocorr <- cor(ats$Temp[-100],ats$Temp[-1])
+> AutoCorrelation <- acf(ats$Temp, plot = FALSE)
+> T_sample <- sample(ats$Temp, 100, replace = FALSE)
+> for (i in 10000){
++     cor_sample <- cor(T_sample[-100], T_sample[-1])
++ }
+> Randomsample <- acf(T_sample, plot = FALSE)
+\end{Sinput}
+\end{Schunk}
 
 \section{Results}
 Correlation coefficient of temperature between successive years is 
@@ -21,23 +49,19 @@ Correlation coefficient of temperature between successive years is
 Correlation coefficient of temperature of random observation is 
 \begin{Schunk}
 \begin{Soutput}
-[1] -0.1247
+[1] -0.1146175
 \end{Soutput}
 \end{Schunk}
 P value is 
 \begin{Schunk}
 \begin{Soutput}
-[1] -1.382316
+[1] -1.351405
 \end{Soutput}
 \end{Schunk}
 The plots are also included:
 
 \begin{center}
-\includegraphics{autocorrelation-005}
-\end{center}
-
-\begin{center}
-\includegraphics{autocorrelation-006}
+\includegraphics{autocorrelation-007}
 \end{center}
 
 \section{Discussion}

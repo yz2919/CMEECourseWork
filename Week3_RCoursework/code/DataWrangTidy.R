@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: DataWrangTidy.R
+# Desc: use `dplyr` and `tidyr` instead of `reshape2` for wrangling dataset
+# Arguments: 0
+# Date: Oct 2019
+
 ################################################################
 ################## Wrangling the Pound Hill Dataset ############
 ################################################################

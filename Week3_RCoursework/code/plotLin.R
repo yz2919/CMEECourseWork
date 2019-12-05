@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: plotLin.R
+# Desc: example of mathematical annotation on a axis in the plot area
+# Arguments: 0
+# Date: Oct 2019
+
 require(lattice)
 require(ggplot2)
 

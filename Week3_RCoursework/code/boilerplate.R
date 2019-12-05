@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: boilerplate.R
+# Desc: illustrates how R function accepts "arguments" and "return" values
+# Arguments: 0
+# Date: Oct 2019
+
 # A boilerplate R script
 
 MyFunction <- function(Arg1, Arg2){

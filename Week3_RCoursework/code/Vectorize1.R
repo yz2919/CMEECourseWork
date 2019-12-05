@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: Vectorize1.R
+# Desc: sums all elements of a matrix, compare operation time of code with loop and with inbuilt function
+# Arguments: 0
+# Date: Oct 2019
+
 M <- matrix(runif(1000000),1000,1000)
 
 SumAllElements <- function(M){

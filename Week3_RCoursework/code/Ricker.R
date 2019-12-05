@@ -1,3 +1,12 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: Ricker.R
+# Desc: a simulation of the Ricker model
+# Arguments: 0
+# Date: Oct 2019
+
+
 Ricker <- function(N0=1, r=1, K=10, generations=50)
 {
     # Runs a sumilation of the Ricker model

@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: MyBars.R
+# Desc: annotate a plot
+# Arguments: 0
+# Date: Oct 2019
+
 require(ggplot2)
 
 a <- read.table("../data/Results.txt", header = TRUE)

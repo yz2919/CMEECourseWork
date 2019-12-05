@@ -1,7 +1,15 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: TAutoCorr.R
+# Desc: test the correlation between temperatures of one year with the next year (successive years) across years in a given location
+# Arguments: 0
+# Date: Oct 2019
+
 # load, examine and plot Rdata
 load("../data/KeyWestAnnualMeanTemperature.RData") 
 ls()
-plot(ats, xlab = "Years", ylab ="Temperature")
+plot(ats, xlab = "Years", ylab ="Temperature(ºC)")
 
 # plot the pattern of autocorrelation
 plot(ats$Temp[-100], ats$Temp[-1], xlab = "Temp(t)", ylab = "Temp(t-1)")
@@ -21,7 +29,7 @@ for (i in 10000){
 }
 
 # Plot random sample
-plot(ats, xlab = "Years", ylab ="Temperature")
+plot(ats, xlab = "Years", ylab ="Temperature", main = "Random Correlation")
 abline(lm(T_sample[-100] ~ T_sample[-1]))
 
 # Plot acf

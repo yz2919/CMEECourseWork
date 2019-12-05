@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: PP_Lattice.R
+# Desc: produces figures and calculate the mean and median predator mass, prey mass and predator-prey size-ratios from given data to a `.csv` file
+# Arguments: 0
+# Date: Oct 2019
+
 # Import data
 MyDF <- read.csv("../data/EcolArchives-E089-51-D1.csv")
 dim(MyDF)

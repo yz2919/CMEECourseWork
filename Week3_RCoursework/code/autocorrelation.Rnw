@@ -9,8 +9,20 @@
 \begin{document}
  \maketitle
 
-<<echo=FALSE>>=
+\section{Load and plot Rdata}
+<<>>=
 load("../data/KeyWestAnnualMeanTemperature.RData") 
+@
+
+\begin{center}
+<<fig=TRUE>>=
+plot(ats, xlab = "Years", ylab = "Temperature",
+    main = "Key West Annual Mean Temperature")
+@
+\end{center}
+
+\section{Correlation of temperature between successive years and random sample}
+<<>>=
 Autocorr <- cor(ats$Temp[-100],ats$Temp[-1])
 AutoCorrelation <- acf(ats$Temp, plot = FALSE)
 T_sample <- sample(ats$Temp, 100, replace = FALSE)
@@ -19,7 +31,6 @@ for (i in 10000){
 }
 Randomsample <- acf(T_sample, plot = FALSE)
 @
-
 
 \section{Results}
 Correlation coefficient of temperature between successive years is 
@@ -35,12 +46,6 @@ P value is
 (cor_sample-Autocorr)/Autocorr
 @
 The plots are also included:
-
-\begin{center}
-<<fig=TRUE,echo=FALSE>>=
-plot(ats, xlab = "Years", ylab = "Temperature", main = "Key West Annual Mean Temperature")
-@
-\end{center}
 
 \begin{center}
 <<fig=TRUE,echo=FALSE>>=

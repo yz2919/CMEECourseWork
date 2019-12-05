@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: Girko.R
+# Desc: plotting Girko's law simulation
+# Arguments: 0
+# Date: Oct 2019
+
 require(reshape2)
 require(ggplot2)
 
