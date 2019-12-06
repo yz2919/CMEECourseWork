@@ -15,6 +15,9 @@ Runs the LV model with prey density dependence.
 ### LV3.py
 The discrete-time version of the LV model.
 
+### LV4.py
+A version of the discrete-time model simulation with a random gaussian fluctuation in resource's growth rate at each time-step.
+
 ### Nets.py
 Visualizes the QMEE CDT collaboration network.
 
