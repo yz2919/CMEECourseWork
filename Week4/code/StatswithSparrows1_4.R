@@ -1,3 +1,11 @@
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatsWithSparrows1_4.R
+# Desc: Script for handout of StatsWithSparrow 1-4
+# Arguments: 0
+# Date: Oct 2019
+
 rm(list = ls())
 getwd()
 d <- read.table("../data/SparrowSize.txt", header = TRUE)
