@@ -30,7 +30,7 @@ TreeHeight <- function(degrees, distance){
 
 # Write output
 args=(commandArgs(TRUE))
-if(length(args)==0){
+if(length(args)==0){ # if no argument, load `trees.csc`
   args<-"../data/trees.csv"
 }
 Filen <- sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(args))

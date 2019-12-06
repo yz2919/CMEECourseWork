@@ -51,6 +51,7 @@ def foo_6(x=10):
     return facto
 
 def main(argv):
+    """main entry"""
     print(foo_1(9))
     print(foo_2(6,4))
     print(foo_3(833,529,641))

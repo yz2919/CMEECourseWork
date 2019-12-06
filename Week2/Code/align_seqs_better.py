@@ -109,6 +109,7 @@ f.close()
 
 
 def main(argv):
+    """main argv"""
     print(calculate_score(s1, s2, l1, l2, 2))
     print(my_best_align)
     print(s1)

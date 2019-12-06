@@ -42,12 +42,12 @@ qplot(Prey.mass,Predator.mass, data=MyDF,
       guides(colour = guide_legend(nrow = 1))
 dev.off()
 
+# saving regression data
 MyDF1<-as.data.frame(
   matrix(nrow = 
            length(unique(MyDF$Type.of.feeding.interaction))*
            length(unique(MyDF$Predator.lifestage)), ncol = 7))
-colnames(MyDF1)<-c("Type.of.feeding.interaction", "Predator.lifestage", "slope", 
-                   "intercept","R2", "F-statistics", "p-value")
+# linear regression
 MyDF2<- MyDF%>% group_by(Type.of.feeding.interaction,Predator.lifestage)%>%do(mod = lm(log(Predator.mass) ~ log(Prey.mass), data=.))
 MyDF2<-MyDF2%>%mutate(Slope = summary(mod)$coeff[2],
                Intercept = summary(mod)$coeff[1],

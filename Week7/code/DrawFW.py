@@ -20,7 +20,7 @@ import numpy
 import matplotlib.pyplot as p
 
 def GenRdmAdjList(N = 2, C = 0.5): 
-    """ 
+    """ generate random list
     """ 
     Ids = range(N) 
     ALst = [] 
