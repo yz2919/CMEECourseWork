@@ -13,7 +13,7 @@ Align two DNA sequences from fasta file and save all the equally best alignments
 Aligns two .fasta sequences.
 
 ### basic_csv.py
-Write a `.csv` file containing only species name and Body mass from a `.csv` file containing 'Species', 'Infraorder','Family', 'Distribution', 'Body mass male (Kg)'.
+Write a `.csv` file containing only species name and Body mass from a `.csv` file containing 'Species', 'Infraorder', 'Family', 'Distribution', 'Body mass male (Kg)'.
 
 ### basic_io1.py
 Output lines from `test.txt` file in `Sandbox` directory.
