@@ -12,6 +12,9 @@ Plot Lotka-Volterra model, consumer-resource population dynamics.
 ### LV2.py
 Runs the LV model with prey density dependence.    
 
+### LV3.py
+The discrete-time version of the LV model.
+
 ### Nets.py
 Visualizes the QMEE CDT collaboration network.
 
