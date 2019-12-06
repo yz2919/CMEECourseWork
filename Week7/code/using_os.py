@@ -1,3 +1,18 @@
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: using_os.py
+# Desc: get a list of files and directories in home directory that start with C or c
+# Arguments: 0
+# Date: Nov 2019
+
+"""get a list of files and directories in home directory that start with C or c"""
+
+__appname__="using_os.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 """ This is blah blah"""
 
 # Use the subprocess.os module to get a list of files and  directories 

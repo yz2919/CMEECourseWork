@@ -1,3 +1,19 @@
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: DrawFW.py
+# Desc: network analysis in Python
+# Arguments: 0
+# Date: Nov 2019
+
+"""network analysis in Python"""
+
+__appname__="DrawFW.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+
 import networkx as nx
 import scipy as sc
 import numpy

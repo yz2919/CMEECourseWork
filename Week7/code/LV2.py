@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: LV2.py
+# Desc: runs the LV model with prey density dependence
+# Arguments: 0
+# Date: Nov 2019
+
+"""Runs the LV model with prey density dependence"""
+
+__appname__="LV1.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
 """......"""
 # plotting Lotka-Volterra model figures.
 
@@ -10,7 +22,7 @@ import scipy.integrate as integrate
 
 #define a function that returns the growth rate of consumer and resource population at any given time step
 def dCR_dt(pops, t=0):
-
+    """returns the growth rate of consumer and resource population at any given time step"""
     R = pops[0]
     C = pops[1]
     dRdt = r * R * (1 - R/K) - a * R * C

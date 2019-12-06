@@ -1,4 +1,13 @@
-# Plots log(field metabolic rate) against log(body mass) for the Nagy et al 
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: fmr.R
+# Desc: writes the list of species names to `species.csv`
+# Arguments: 0
+# Date: Nov 2019
+
+
+# Plots log(field metabolic rate) against log(body mass) for the Nagy et al
 # 1999 dataset to a file fmr.pdf.
 # Writes the list of species names to species.csv
 

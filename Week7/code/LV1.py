@@ -1,4 +1,19 @@
-# plotting Lotka-Volterra model figures.
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: LV1.py
+# Desc: plotting Lotka-Volterra model figures
+# Arguments: 0
+# Date: Nov 2019
+
+"""plotting Lotka-Volterra model figures"""
+
+__appname__="LV1.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+
 
 # Solving LV model using numerica intergarion
 import scipy as sc
@@ -6,7 +21,7 @@ import scipy.integrate as integrate
 
 #define a function that returns the growth rate of consumer and resource population at any given time step
 def dCR_dt(pops, t=0):
-
+    """returns the growth rate of consumer and resource population at any given time step"""
     R = pops[0]
     C = pops[1]
     dRdt = r * R - a * R * C

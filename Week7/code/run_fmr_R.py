@@ -1,4 +1,18 @@
 # /usr/bin/env python
+
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: run_fmr_R.py
+# Desc: runs `fmr.R`
+# Arguments: 0
+# Date: Nov 2019
+
+"""runs `fmr.R`"""
+
+__appname__="profileme.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
 """Running fmr.R from python"""
 
 

@@ -1,3 +1,18 @@
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: blackbirds.py
+# Desc: find Kingdom, Phylum and Species names in the `.txt` file
+# Arguments: 0
+# Date: Nov 2019
+
+"""find Kingdom, Phylum and Species names in the `.txt` file"""
+
+__appname__="blackbirds.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 import re
 
 # Read the file (using a different, more python 3 way, just for fun!)
