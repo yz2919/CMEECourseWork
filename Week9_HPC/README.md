@@ -4,7 +4,7 @@
 ## Content
 
 ### yz2919_HPC_2019_cluster.sh
-Call trial run on `yz2919_HPC_2019_cluster.R
+Call trial run on `yz2919_HPC_2019_cluster.R`.
 
 ### yz2919_HPC_2019_cluster.R
 HPC excercises R code HPC run code proforma.
