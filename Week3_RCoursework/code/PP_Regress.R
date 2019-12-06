@@ -2,7 +2,7 @@
 
 # Author: Yuqing Zhou yz2919@imperial.ac.uk
 # Script: PP_Regress.R
-# Desc: R coursework practicals
+# Desc: R coursework practicals. An analysis of Linear regression on subsets of the data corresponding to available Feeding Type × Predator life Stage combination.
 # Arguments: 0
 # Date: Oct 2019
 #install.packages("broom")
@@ -53,11 +53,11 @@ MyDF2<-MyDF2%>%mutate(Slope = summary(mod)$coeff[2],
                Intercept = summary(mod)$coeff[1],
                R.squared = summary(mod)$r.squared,
                P.value=summary(mod)$coeff[8],
-               F.statistic=summary(mod)$'F-statistic'
+               F.statistic=as.numeric(summary(mod)$fstatistic)[1]
                )%>%select(Type.of.feeding.interaction,
                           Predator.lifestage,
                           Slope,Intercept,
-                          R.squared, P.value) 
+                            R.squared, F.statistic, P.value)
 
 
 write.csv(MyDF2,"../results/PP_Regress_Results.csv",row.names = FALSE,quote = FALSE)

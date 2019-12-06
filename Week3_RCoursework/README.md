@@ -21,8 +21,11 @@ Annotates a plot.
 ### PP_Lattice.R
 Produces figures and calculate the mean and median predator mass, prey mass and predator-prey size-ratios from given data.
 
+### PP_Regress_loc.R
+Practicals extra. An analysis of Linear regression on subsets of the data corresponding to available Feeding Type × Predator life Stage × Location combination.
+
 ### PP_Regress.R
-Saves pdf with required figure and results.
+An analysis of Linear regression on subsets of the data corresponding to available Feeding Type × Predator life Stage × Location combination. Saves required figure and results. 
 
 ### Ricker.R
 A simulation of the Ricker model.
