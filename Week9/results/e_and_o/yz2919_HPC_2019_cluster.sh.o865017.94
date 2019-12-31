@@ -1,0 +1,65 @@
+R is about to run
+
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-conda_cos6-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #!/bin/env R
+> 
+> # Author: Yuqing Zhou yz2919@imperial.ac.uk
+> # Script: yz2919_HPC_2019_cluster.R
+> # Description: CMEE 2019 HPC excercises R code HPC run code proforma
+> # Arguments: 0
+> # Date: Nov 2019
+> 
+> 
+> rm(list=ls()) # good practice 
+> source("HPC.R")
+> iter <- as.numeric(Sys.getenv("PBS_ARRAY_INDEX"))
+> set.seed(iter) # set random seed as iter
+> # iter<- sample(1:100, 1)
+> # sizes <- c(500, 1000, 2500, 5000) # select your simulation parameter
+> mod = iter %% 4
+> if (mod == 1){
++   size = 500
++   } else if (mod == 2){
++   size = 1000
++   } else if (mod == 3){
++   size = 2500
++   } else {
++   size = 5000
++ }
+> 
+> cluster_run(speciation_rate = 0.005177, 
++             size,
++             wall_time = 690,
++             interval_rich = 1, 
++             interval_oct = size/10,
++             burn_in_generations = 8*size,
++             output_file_name = paste0("yz2919_output_",iter,".rda"))# do simulation
+> 
+R has finished running
+
+============================================
+
+        Job resource usage summary 
+
+                 Memory (GB)    NCPUs
+ Requested  :         1             1
+ Used       :         0 (peak)   0.98 (ave)
+
+============================================
