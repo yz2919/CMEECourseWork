@@ -11,7 +11,7 @@
 
 rm(list = ls()) #clear workspace
 graphics.off()
-
+options(warn=-1)
 library(tidyr)
 #library(ggplot2)
 library(minpack.lm)
