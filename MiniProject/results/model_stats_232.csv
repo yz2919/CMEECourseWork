@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","1","-Inf","-Inf","Serratia marcescens_Pasteurised Double Cream_10_1_4","Cubic"
+"2","0.999994957604242","-28.6379080578863","-31.0927306134068","Serratia marcescens_Pasteurised Double Cream_10_1_4","Logistic"
+"3","1","-283.629346836846","-286.697875031247","Serratia marcescens_Pasteurised Double Cream_10_1_4","Logisticlag"
+"4","1","-266.092615456982","-269.161143651382","Serratia marcescens_Pasteurised Double Cream_10_1_4","Gompertz"
+"5","1","-277.486286366358","-280.554814560759","Serratia marcescens_Pasteurised Double Cream_10_1_4","Baranyi"
+"6","NA","NA","NA","Serratia marcescens_Pasteurised Double Cream_10_1_4","Buchanan"

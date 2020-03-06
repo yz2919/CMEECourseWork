@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.986887642925383,-4.55528925880359,-1.3600026107273,"Staphylococcus spp._Raw Chicken Breast_7_1_2","Cubic"
+"2",0.990541165141622,-11.1277713453838,-8.57154202692281,"Staphylococcus spp._Raw Chicken Breast_7_1_2","Logistic"
+"3",0.992282254634618,-11.9757485073006,-8.78046185922433,"Staphylococcus spp._Raw Chicken Breast_7_1_2","Logisticlag"
+"4",0.993959584250064,-15.4064404981289,-12.2111538500526,"Staphylococcus spp._Raw Chicken Breast_7_1_2","Gompertz"
+"5",0.991761678699688,-11.0619079263452,-7.86662127826891,"Staphylococcus spp._Raw Chicken Breast_7_1_2","Baranyi"
+"6",0.991131564492698,-10.0300826836185,-6.83479603554217,"Staphylococcus spp._Raw Chicken Breast_7_1_2","Buchanan"

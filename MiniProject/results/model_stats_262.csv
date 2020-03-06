@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.989466338027818","-38.181536817106","-34.0154700968249","Arthrobacter globiformis_TGE agar_7_1_5","Cubic"
+"2","0.991945959595404","-44.7443734045107","-41.4115200282858","Arthrobacter globiformis_TGE agar_7_1_5","Logistic"
+"3","0.992513670015751","-43.9869916419028","-39.8209249216217","Arthrobacter globiformis_TGE agar_7_1_5","Logisticlag"
+"4","0.99342421990207","-46.1916446590109","-42.0255779387299","Arthrobacter globiformis_TGE agar_7_1_5","Gompertz"
+"5","0.990248688139246","-39.4934983114404","-35.3274315911594","Arthrobacter globiformis_TGE agar_7_1_5","Baranyi"
+"6","NA","NA","NA","Arthrobacter globiformis_TGE agar_7_1_5","Buchanan"

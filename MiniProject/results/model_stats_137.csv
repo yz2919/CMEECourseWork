@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.996679301213701,-12.7201668167541,-11.734043930073,"Pseudomonas spp._Raw Chicken Breast_20_1_2","Cubic"
+"2",0.99704603060661,-15.7733955571501,-14.9844972478052,"Pseudomonas spp._Raw Chicken Breast_20_1_2","Logistic"
+"3",0.998001383968394,-17.289649352509,-16.3035264658279,"Pseudomonas spp._Raw Chicken Breast_20_1_2","Logisticlag"
+"4",0.998318291061328,-18.8434494478612,-17.8573265611801,"Pseudomonas spp._Raw Chicken Breast_20_1_2","Gompertz"
+"5",0.996349889167475,-11.8689261741135,-10.8828032874324,"Pseudomonas spp._Raw Chicken Breast_20_1_2","Baranyi"
+"6",0.988604458130436,-1.6227440304169,-0.636621143735802,"Pseudomonas spp._Raw Chicken Breast_20_1_2","Buchanan"

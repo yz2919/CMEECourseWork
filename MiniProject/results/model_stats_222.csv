@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","1","-Inf","-Inf","Serratia marcescens_Pasteurised Skim Milk_15_1_4","Cubic"
+"2","0.999500007892085","-12.9641786939148","-15.4190012494353","Serratia marcescens_Pasteurised Skim Milk_15_1_4","Logistic"
+"3","1","-257.316246332698","-260.384774527099","Serratia marcescens_Pasteurised Skim Milk_15_1_4","Logisticlag"
+"4","1","-Inf","-Inf","Serratia marcescens_Pasteurised Skim Milk_15_1_4","Gompertz"
+"5","NA","NA","NA","Serratia marcescens_Pasteurised Skim Milk_15_1_4","Baranyi"
+"6","NA","NA","NA","Serratia marcescens_Pasteurised Skim Milk_15_1_4","Buchanan"

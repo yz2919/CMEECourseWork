@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.995227168082168","-0.881173072685527","-1.92237572654525","Aerobic Mesophilic._Cooked Chicken Breast_4_1_2","Cubic"
+"2","0.979091673149189","5.9820729553516","5.14911083226382","Aerobic Mesophilic._Cooked Chicken Breast_4_1_2","Logistic"
+"3","0.979877147794317","7.75232456357734","6.71112190971761","Aerobic Mesophilic._Cooked Chicken Breast_4_1_2","Logisticlag"
+"4","0.975664542597831","8.89279462913981","7.85159197528008","Aerobic Mesophilic._Cooked Chicken Breast_4_1_2","Gompertz"
+"5","NA","NA","NA","Aerobic Mesophilic._Cooked Chicken Breast_4_1_2","Baranyi"
+"6","0.990802368331641","3.05486413549108","2.01366148163135","Aerobic Mesophilic._Cooked Chicken Breast_4_1_2","Buchanan"

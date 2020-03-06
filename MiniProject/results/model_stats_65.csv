@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.875740654589122","10.1076453194328","13.6478963249439","Bacillus.pumilus..RDA.R._TSB_25_1_0","Cubic"
+"2","0.975556208374233","-16.2822738947949","-13.450073090386","Bacillus.pumilus..RDA.R._TSB_25_1_0","Logistic"
+"3","0.967834385298754","-10.1644475981006","-6.62419659258956","Bacillus.pumilus..RDA.R._TSB_25_1_0","Logisticlag"
+"4","0.967841908162082","-10.1679561941225","-6.6277051886114","Bacillus.pumilus..RDA.R._TSB_25_1_0","Gompertz"
+"5","0.956855466791034","-5.7595820797172","-2.21933107420615","Bacillus.pumilus..RDA.R._TSB_25_1_0","Baranyi"
+"6","NA","NA","NA","Bacillus.pumilus..RDA.R._TSB_25_1_0","Buchanan"

@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.991056614656788","11.2448463443025","14.0695931316102","Lactobacillus sakei_MRS broth_12_1_6","Cubic"
+"2","0.994214571133249","3.58241425631031","5.84221168615646","Lactobacillus sakei_MRS broth_12_1_6","Logistic"
+"3","0.994214850474167","5.58178655528935","8.40653334259703","Lactobacillus sakei_MRS broth_12_1_6","Logisticlag"
+"4","0.993521321780807","7.05367650162529","9.87842328893297","Lactobacillus sakei_MRS broth_12_1_6","Gompertz"
+"5","0.995075928721055","3.48672575063523","6.31147253794292","Lactobacillus sakei_MRS broth_12_1_6","Baranyi"
+"6","NA","NA","NA","Lactobacillus sakei_MRS broth_12_1_6","Buchanan"

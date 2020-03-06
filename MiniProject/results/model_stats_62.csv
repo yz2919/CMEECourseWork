@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.808710693945642","-5.36687916816489","-1.82662816265384","Acinetobacter.clacoaceticus..RDA.R._TSB_25_1_0","Cubic"
+"2","0.939241608759644","-24.5701057683784","-21.7379049639695","Acinetobacter.clacoaceticus..RDA.R._TSB_25_1_0","Logistic"
+"3","0.946060665538703","-24.3557840827781","-20.815533077267","Acinetobacter.clacoaceticus..RDA.R._TSB_25_1_0","Logisticlag"
+"4","0.946136534236429","-24.3768972755968","-20.8366462700858","Acinetobacter.clacoaceticus..RDA.R._TSB_25_1_0","Gompertz"
+"5","NA","NA","NA","Acinetobacter.clacoaceticus..RDA.R._TSB_25_1_0","Baranyi"
+"6","NA","NA","NA","Acinetobacter.clacoaceticus..RDA.R._TSB_25_1_0","Buchanan"

@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.997143772771528","-9.83542676007617","-10.8766294139359","Salmonella Typhimurium_Vacuum Beef Striploins_30_1_3","Cubic"
+"2","0.99143471544135","-5.24613225078425","-6.07909437387203","Salmonella Typhimurium_Vacuum Beef Striploins_30_1_3","Logistic"
+"3","0.999471278126751","-19.9561928477156","-20.9973955015753","Salmonella Typhimurium_Vacuum Beef Striploins_30_1_3","Logisticlag"
+"4","0.999039812471188","-16.3761964051957","-17.4173990590554","Salmonella Typhimurium_Vacuum Beef Striploins_30_1_3","Gompertz"
+"5","0.999818714046515","-26.3785142238607","-27.4197168777205","Salmonella Typhimurium_Vacuum Beef Striploins_30_1_3","Baranyi"
+"6","NA","NA","NA","Salmonella Typhimurium_Vacuum Beef Striploins_30_1_3","Buchanan"

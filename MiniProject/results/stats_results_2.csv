@@ -1,0 +1,25 @@
+"","Model","score_type","scores"
+"1","Cubic","Convergence (AIC)",97.9
+"2","Cubic","Best fit AIC (%)",33
+"3","Cubic","Convergence (BIC)",97.9
+"4","Cubic","Best fit BIC (%)",32.3
+"5","Logistic","Convergence (AIC)",99.3
+"6","Logistic","Best fit AIC (%)",49.7
+"7","Logistic","Convergence (BIC)",99.3
+"8","Logistic","Best fit BIC (%)",53.8
+"9","Logisticlag","Convergence (AIC)",91.3
+"10","Logisticlag","Best fit AIC (%)",56.2
+"11","Logisticlag","Convergence (BIC)",91.3
+"12","Logisticlag","Best fit BIC (%)",53.1
+"13","Gompertz","Convergence (AIC)",88.2
+"14","Gompertz","Best fit AIC (%)",83.7
+"15","Gompertz","Convergence (BIC)",88.2
+"16","Gompertz","Best fit BIC (%)",83
+"17","Baranyi","Convergence (AIC)",82.3
+"18","Baranyi","Best fit AIC (%)",62.2
+"19","Baranyi","Convergence (BIC)",82.3
+"20","Baranyi","Best fit BIC (%)",59.4
+"21","Buchanan","Convergence (AIC)",25.7
+"22","Buchanan","Best fit AIC (%)",16.3
+"23","Buchanan","Convergence (BIC)",25.7
+"24","Buchanan","Best fit BIC (%)",16

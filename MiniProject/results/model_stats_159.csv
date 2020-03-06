@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.989361409154774","-11.786056681982","-9.36152343304197","Aerobic Psychotropic._Salted Chicken Breast_10_1_2","Cubic"
+"2","0.989585358608953","-14.041361405574","-12.101734806422","Aerobic Psychotropic._Salted Chicken Breast_10_1_2","Logistic"
+"3","0.991537777771712","-14.5325713450272","-12.1080380960872","Aerobic Psychotropic._Salted Chicken Breast_10_1_2","Logisticlag"
+"4","0.990006311931575","-12.5364687047893","-10.1119354558493","Aerobic Psychotropic._Salted Chicken Breast_10_1_2","Gompertz"
+"5","0.992511535895718","-15.9995485074744","-13.5750152585344","Aerobic Psychotropic._Salted Chicken Breast_10_1_2","Baranyi"
+"6","NA","NA","NA","Aerobic Psychotropic._Salted Chicken Breast_10_1_2","Buchanan"

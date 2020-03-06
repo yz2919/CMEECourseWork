@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.697398363747353","-4.44811890422583","-1.62337211691815","Tetraselmis tetrahele_ESAW_25_3_1","Cubic"
+"2","0.817852183561208","-13.0469016529412","-10.7871042230951","Tetraselmis tetrahele_ESAW_25_3_1","Logistic"
+"3","NA","NA","NA","Tetraselmis tetrahele_ESAW_25_3_1","Logisticlag"
+"4","NA","NA","NA","Tetraselmis tetrahele_ESAW_25_3_1","Gompertz"
+"5","0.866296356661687","-15.0664080768281","-12.2416612895204","Tetraselmis tetrahele_ESAW_25_3_1","Baranyi"
+"6","NA","NA","NA","Tetraselmis tetrahele_ESAW_25_3_1","Buchanan"

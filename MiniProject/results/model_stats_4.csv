@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.964343358127411","-46.387606325927","-39.2176703035013","Pantoea.agglomerans.2_TSB_5_1_0","Cubic"
+"2","0.838051718786428","-1.47401687475954","4.26193194318104","Pantoea.agglomerans.2_TSB_5_1_0","Logistic"
+"3","0.961585086513493","-44.077786438552","-36.9078504161263","Pantoea.agglomerans.2_TSB_5_1_0","Logisticlag"
+"4","0.957072418507065","-40.6346539997617","-33.464717977336","Pantoea.agglomerans.2_TSB_5_1_0","Gompertz"
+"5","0.963536813307837","-45.6942066787051","-38.5242706562794","Pantoea.agglomerans.2_TSB_5_1_0","Baranyi"
+"6","NA","NA","NA","Pantoea.agglomerans.2_TSB_5_1_0","Buchanan"

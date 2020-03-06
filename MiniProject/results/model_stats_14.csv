@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.573863576394511","-33.8470620186866","-27.0105828687542","Dickeya.zeae_TSB_5_1_0","Cubic"
+"2","0.195379465359598","-17.4143359852073","-11.9451526652614","Dickeya.zeae_TSB_5_1_0","Logistic"
+"3","NA","NA","NA","Dickeya.zeae_TSB_5_1_0","Logisticlag"
+"4","NA","NA","NA","Dickeya.zeae_TSB_5_1_0","Gompertz"
+"5","0.0615742716869155","-10.953180915585","-4.11670176565261","Dickeya.zeae_TSB_5_1_0","Baranyi"
+"6","NA","NA","NA","Dickeya.zeae_TSB_5_1_0","Buchanan"

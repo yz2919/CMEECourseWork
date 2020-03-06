@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.993250870828658","-11.247161295684","-12.2883639495437","Spoilage_C02 Beef Striploins_20_1_3","Cubic"
+"2","0.979016352244594","-6.44118146864428","-7.27414359173206","Spoilage_C02 Beef Striploins_20_1_3","Logistic"
+"3","0.994109633867833","-12.0637332607976","-13.1049359146573","Spoilage_C02 Beef Striploins_20_1_3","Logisticlag"
+"4","0.993592938831036","-11.559238066218","-12.6004407200777","Spoilage_C02 Beef Striploins_20_1_3","Gompertz"
+"5","0.993431985581545","-11.4103728007015","-12.4515754545612","Spoilage_C02 Beef Striploins_20_1_3","Baranyi"
+"6","NA","NA","NA","Spoilage_C02 Beef Striploins_20_1_3","Buchanan"

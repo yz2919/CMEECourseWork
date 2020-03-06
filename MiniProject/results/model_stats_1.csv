@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.989971497405513","-86.6432913210972","-79.8068121711648","Chryseobacterium.balustinum_TSB_5_1_0","Cubic"
+"2","0.994449552410709","-105.798320402054","-100.329137082108","Chryseobacterium.balustinum_TSB_5_1_0","Logistic"
+"3","0.997285999895564","-124.546514570702","-117.710035420769","Chryseobacterium.balustinum_TSB_5_1_0","Logisticlag"
+"4","0.997280640380565","-124.489302829426","-117.652823679493","Chryseobacterium.balustinum_TSB_5_1_0","Gompertz"
+"5","0.994031771366329","-101.693743976726","-94.8572648267933","Chryseobacterium.balustinum_TSB_5_1_0","Baranyi"
+"6","NA","NA","NA","Chryseobacterium.balustinum_TSB_5_1_0","Buchanan"

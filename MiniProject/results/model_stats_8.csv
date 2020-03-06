@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.990684301087694","-84.4754355098252","-77.6389563598928","Pseudomonas.fluorescens.2_TSB_5_1_0","Cubic"
+"2","0.969398892122859","-51.9847152504992","-46.5155319305533","Pseudomonas.fluorescens.2_TSB_5_1_0","Logistic"
+"3","0.989660653358924","-81.4520217327643","-74.6155425828319","Pseudomonas.fluorescens.2_TSB_5_1_0","Logisticlag"
+"4","0.989786743285328","-81.8078553640896","-74.9713762141573","Pseudomonas.fluorescens.2_TSB_5_1_0","Gompertz"
+"5","0.988568913954966","-78.5410072198779","-71.7045280699456","Pseudomonas.fluorescens.2_TSB_5_1_0","Baranyi"
+"6","NA","NA","NA","Pseudomonas.fluorescens.2_TSB_5_1_0","Buchanan"

@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.805710566830386","9.6131546272536","13.7792213475347","Clavibacter.michiganensis_TSB_35_1_0","Cubic"
+"2","0.982134421864044","-32.9568883868979","-29.6240350106731","Clavibacter.michiganensis_TSB_35_1_0","Logistic"
+"3","0.995255199111496","-53.495936906829","-49.3298701865479","Clavibacter.michiganensis_TSB_35_1_0","Logisticlag"
+"4","0.99525897966928","-53.5094875492572","-49.3434208289761","Clavibacter.michiganensis_TSB_35_1_0","Gompertz"
+"5","NA","NA","NA","Clavibacter.michiganensis_TSB_35_1_0","Baranyi"
+"6","NA","NA","NA","Clavibacter.michiganensis_TSB_35_1_0","Buchanan"

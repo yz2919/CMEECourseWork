@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.375575080732481","27.7034261446158","32.1552849340966","Klebsiella.pneumonia_TSB_35_1_0","Cubic"
+"2","0.887940126220974","-5.21693391732257","-1.65544688573791","Klebsiella.pneumonia_TSB_35_1_0","Logistic"
+"3","0.995752577388477","-62.1259112178392","-57.6740524283584","Klebsiella.pneumonia_TSB_35_1_0","Logisticlag"
+"4","0.996656622233694","-66.4338647428244","-61.9820059533436","Klebsiella.pneumonia_TSB_35_1_0","Gompertz"
+"5","NA","NA","NA","Klebsiella.pneumonia_TSB_35_1_0","Baranyi"
+"6","NA","NA","NA","Klebsiella.pneumonia_TSB_35_1_0","Buchanan"

@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.978813636320175","14.2882987204639","12.3354882826344","Pseudomonas sp._APT Broth_8_1_8","Cubic"
+"2","0.998454594299333","-0.802057713355566","-2.36430606361917","Pseudomonas sp._APT Broth_8_1_8","Logistic"
+"3","0.999974903920451","-19.4037082314747","-21.3565186693042","Pseudomonas sp._APT Broth_8_1_8","Logisticlag"
+"4","0.99999557277774","-28.0784046441475","-30.031215081977","Pseudomonas sp._APT Broth_8_1_8","Gompertz"
+"5","0.99993921026355","-14.9801616031668","-16.9329720409963","Pseudomonas sp._APT Broth_8_1_8","Baranyi"
+"6","NA","NA","NA","Pseudomonas sp._APT Broth_8_1_8","Buchanan"

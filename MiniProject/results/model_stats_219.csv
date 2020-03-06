@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.985422308895392","0.464518662310772","0.194069407587337","Serratia marcescens_UHT Skim Milk_6_1_4","Cubic"
+"2","0.324900951983554","25.3120881125627","25.095728708784","Serratia marcescens_UHT Skim Milk_6_1_4","Logistic"
+"3","0.994823531327066","-6.78306610986158","-7.05351536458501","Serratia marcescens_UHT Skim Milk_6_1_4","Logisticlag"
+"4","0.995006508669087","-7.03498049842825","-7.30542975315168","Serratia marcescens_UHT Skim Milk_6_1_4","Gompertz"
+"5","0.993235812884531","-4.91043315418967","-5.1808824089131","Serratia marcescens_UHT Skim Milk_6_1_4","Baranyi"
+"6","NA","NA","NA","Serratia marcescens_UHT Skim Milk_6_1_4","Buchanan"

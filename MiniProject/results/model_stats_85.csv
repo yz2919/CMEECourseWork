@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.794656755889424","3.26657139703817","6.80682240254922","Stenotrophomonas.maltophilia..RDA.R._TSB_35_1_0","Cubic"
+"2","0.975314887703248","-30.5106678966999","-27.678467092291","Stenotrophomonas.maltophilia..RDA.R._TSB_35_1_0","Logistic"
+"3","0.973763088355424","-27.596163799898","-24.0559127943869","Stenotrophomonas.maltophilia..RDA.R._TSB_35_1_0","Logisticlag"
+"4","NA","NA","NA","Stenotrophomonas.maltophilia..RDA.R._TSB_35_1_0","Gompertz"
+"5","NA","NA","NA","Stenotrophomonas.maltophilia..RDA.R._TSB_35_1_0","Baranyi"
+"6","NA","NA","NA","Stenotrophomonas.maltophilia..RDA.R._TSB_35_1_0","Buchanan"

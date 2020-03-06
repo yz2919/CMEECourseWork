@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.99241795911558","-5.99511537260678","-7.0363180264665","Spoilage_Vacuum Beef Striploins_30_1_3","Cubic"
+"2","0.989090072348139","-5.81177081810831","-6.64473294119609","Spoilage_Vacuum Beef Striploins_30_1_3","Logistic"
+"3","0.997230061418493","-12.0368589456131","-13.0780615994729","Spoilage_Vacuum Beef Striploins_30_1_3","Logisticlag"
+"4","0.998303044954235","-14.9767968559707","-16.0179995098304","Spoilage_Vacuum Beef Striploins_30_1_3","Gompertz"
+"5","0.996124705127398","-10.0220792924929","-11.0632819463526","Spoilage_Vacuum Beef Striploins_30_1_3","Baranyi"
+"6","NA","NA","NA","Spoilage_Vacuum Beef Striploins_30_1_3","Buchanan"

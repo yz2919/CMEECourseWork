@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.995798132018656","-17.1968876968879","-15.6839622319177","Staphylococcus spp._Salted Chicken Breast_2_1_2","Cubic"
+"2","0.884803626188357","13.9142031687126","15.1245435406887","Staphylococcus spp._Salted Chicken Breast_2_1_2","Logistic"
+"3","0.995457185969106","-16.4167130293457","-14.9037875643754","Staphylococcus spp._Salted Chicken Breast_2_1_2","Logisticlag"
+"4","0.995970994946947","-17.6169849318669","-16.1040594668967","Staphylococcus spp._Salted Chicken Breast_2_1_2","Gompertz"
+"5","0.995881662261385","-17.3976833311799","-15.8847578662096","Staphylococcus spp._Salted Chicken Breast_2_1_2","Baranyi"
+"6","NA","NA","NA","Staphylococcus spp._Salted Chicken Breast_2_1_2","Buchanan"

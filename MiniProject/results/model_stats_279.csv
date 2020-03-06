@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.995545757304988","-2.84420562880018","1.3218610914809","Weissella viridescens_MRS broth_16_1_6","Cubic"
+"2","0.996543376632173","-9.1548080663011","-5.82195469007623","Weissella viridescens_MRS broth_16_1_6","Logistic"
+"3","0.996709970854062","-7.99453638794328","-3.8284696676622","Weissella viridescens_MRS broth_16_1_6","Logisticlag"
+"4","0.996284524944433","-5.92716432596164","-1.76109760568056","Weissella viridescens_MRS broth_16_1_6","Gompertz"
+"5","NA","NA","NA","Weissella viridescens_MRS broth_16_1_6","Baranyi"
+"6","0.987685896060823","14.4428939515526","18.6089606718336","Weissella viridescens_MRS broth_16_1_6","Buchanan"

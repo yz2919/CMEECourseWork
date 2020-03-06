@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.996578421039788,-26.448842982813,-24.024309733873,"Pseudomonas spp._Salted Chicken Breast_7_1_2","Cubic"
+"2",0.997435569220534,-31.9092301005554,-29.9696035014034,"Pseudomonas spp._Salted Chicken Breast_7_1_2","Logistic"
+"3",0.997435921115252,-29.9108768700451,-27.4863436211051,"Pseudomonas spp._Salted Chicken Breast_7_1_2","Logisticlag"
+"4",0.995091174242077,-22.1176514080683,-19.6931181591283,"Pseudomonas spp._Salted Chicken Breast_7_1_2","Gompertz"
+"5",0.998367687342343,-35.3300947167802,-32.9055614678402,"Pseudomonas spp._Salted Chicken Breast_7_1_2","Baranyi"
+"6",0.998285111971393,-34.7378950599225,-32.3133618109825,"Pseudomonas spp._Salted Chicken Breast_7_1_2","Buchanan"

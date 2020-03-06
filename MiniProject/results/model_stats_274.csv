@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.993930650764263,2.68148554563017,6.54442915682908,"Lactobacillus plantarum_MRS broth_20_1_6","Cubic"
+"2",0.993261245544152,2.35546505947313,5.44581994843226,"Lactobacillus plantarum_MRS broth_20_1_6","Logistic"
+"3",0.993267391491951,4.34086591729543,8.20380952849433,"Lactobacillus plantarum_MRS broth_20_1_6","Logisticlag"
+"4",0.99245463636456,6.16439590105975,10.0273395122587,"Lactobacillus plantarum_MRS broth_20_1_6","Gompertz"
+"5",0.993871124231996,2.83764467146173,6.70058828266063,"Lactobacillus plantarum_MRS broth_20_1_6","Baranyi"
+"6",0.99166552760144,7.75586675027579,11.6188103614747,"Lactobacillus plantarum_MRS broth_20_1_6","Buchanan"

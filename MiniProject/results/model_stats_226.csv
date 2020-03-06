@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.989551491109357","4.10899172964102","2.15618129181152","Serratia marcescens_Pasteurised Full-fat Milk_10_1_4","Cubic"
+"2","0.996481473889726","-3.33309374580035","-4.89534209606395","Serratia marcescens_Pasteurised Full-fat Milk_10_1_4","Logistic"
+"3","0.996481492921347","-1.33312079075135","-3.28593122858085","Serratia marcescens_Pasteurised Full-fat Milk_10_1_4","Logisticlag"
+"4","0.997891078554655","-3.89242139477423","-5.84523183260373","Serratia marcescens_Pasteurised Full-fat Milk_10_1_4","Gompertz"
+"5","0.996474858120569","-1.32370123736385","-3.27651167519334","Serratia marcescens_Pasteurised Full-fat Milk_10_1_4","Baranyi"
+"6","NA","NA","NA","Serratia marcescens_Pasteurised Full-fat Milk_10_1_4","Buchanan"

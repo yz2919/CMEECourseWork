@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.987028790909024,-3.28943711685078,-2.89222940845161,"Aerobic Mesophilic._Salted Chicken Breast_15_1_2","Cubic"
+"2",0.988862423581666,-6.50869761270592,-6.19093144598658,"Aerobic Mesophilic._Salted Chicken Breast_15_1_2","Logistic"
+"3",0.992109888487604,-7.26641270059601,-6.86920499219683,"Aerobic Mesophilic._Salted Chicken Breast_15_1_2","Logisticlag"
+"4",0.994671272509113,-10.4063951257312,-10.009187417332,"Aerobic Mesophilic._Salted Chicken Breast_15_1_2","Gompertz"
+"5",0.989892493991042,-5.28506830942782,-4.88786060102864,"Aerobic Mesophilic._Salted Chicken Breast_15_1_2","Baranyi"
+"6",0.986557501373414,-3.00392502547022,-2.60671731707104,"Aerobic Mesophilic._Salted Chicken Breast_15_1_2","Buchanan"

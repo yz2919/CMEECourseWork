@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.844305075501247","-9.57212651263022","-9.84257576735366","Oscillatoria agardhii StrainCYA 128_Z8_20_1_7","Cubic"
+"2","0.832879276230551","-11.0764007385909","-11.2927601423697","Oscillatoria agardhii StrainCYA 128_Z8_20_1_7","Logistic"
+"3","0.849636164255274","-9.8160103736813","-10.0864596284047","Oscillatoria agardhii StrainCYA 128_Z8_20_1_7","Logisticlag"
+"4","0.857840577675954","-10.2087720331872","-10.4792212879107","Oscillatoria agardhii StrainCYA 128_Z8_20_1_7","Gompertz"
+"5","0.849752035689712","-9.82140670264172","-10.0918559573652","Oscillatoria agardhii StrainCYA 128_Z8_20_1_7","Baranyi"
+"6","NA","NA","NA","Oscillatoria agardhii StrainCYA 128_Z8_20_1_7","Buchanan"

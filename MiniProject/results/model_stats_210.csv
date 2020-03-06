@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.997384275497095","-12.1230527738874","-13.1642554277471","Escherichia coli_C02 Beef Striploins_20_1_3","Cubic"
+"2","0.995160200523195","-10.4310597313634","-11.2640218544512","Escherichia coli_C02 Beef Striploins_20_1_3","Logistic"
+"3","0.996550324697814","-10.462618800278","-11.5038214541377","Escherichia coli_C02 Beef Striploins_20_1_3","Logisticlag"
+"4","0.996377243037136","-10.1688875005628","-11.2100901544225","Escherichia coli_C02 Beef Striploins_20_1_3","Gompertz"
+"5","0.996724794523566","-10.7740158200226","-11.8152184738824","Escherichia coli_C02 Beef Striploins_20_1_3","Baranyi"
+"6","NA","NA","NA","Escherichia coli_C02 Beef Striploins_20_1_3","Buchanan"

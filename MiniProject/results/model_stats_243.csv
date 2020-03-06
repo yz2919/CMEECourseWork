@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.966018355187261","-3.8317240373767","-0.636437389300408","Arthrobacter sp. 88_TGE agar_20_1_5","Cubic"
+"2","0.98813846184258","-20.566996230454","-18.010766911993","Arthrobacter sp. 88_TGE agar_20_1_5","Logistic"
+"3","0.99044649020297","-21.5964908530218","-18.4012042049455","Arthrobacter sp. 88_TGE agar_20_1_5","Logisticlag"
+"4","0.989870482389209","-20.7768595611576","-17.5815729130813","Arthrobacter sp. 88_TGE agar_20_1_5","Gompertz"
+"5","0.991416664735759","-23.0956954352304","-19.9004087871541","Arthrobacter sp. 88_TGE agar_20_1_5","Baranyi"
+"6","NA","NA","NA","Arthrobacter sp. 88_TGE agar_20_1_5","Buchanan"

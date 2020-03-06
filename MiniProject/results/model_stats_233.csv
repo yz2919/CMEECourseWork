@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","1","-Inf","-Inf","Serratia marcescens_UHT Double Cream_10_1_4","Cubic"
+"2","0.996737088008199","-1.25899048004209","-3.71381303556253","Serratia marcescens_UHT Double Cream_10_1_4","Logistic"
+"3","1","-260.547486688218","-263.616014882619","Serratia marcescens_UHT Double Cream_10_1_4","Logisticlag"
+"4","1","-264.224031643094","-267.292559837495","Serratia marcescens_UHT Double Cream_10_1_4","Gompertz"
+"5","NA","NA","NA","Serratia marcescens_UHT Double Cream_10_1_4","Baranyi"
+"6","1","-266.9977188473","-270.0662470417","Serratia marcescens_UHT Double Cream_10_1_4","Buchanan"

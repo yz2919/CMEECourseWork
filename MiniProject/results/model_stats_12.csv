@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.991873912324702","-97.2137714738901","-90.3772923239577","Stenotrophomonas.maltophilia.2_TSB_5_1_0","Cubic"
+"2","0.987338123185822","-86.3518055509418","-80.8826222309959","Stenotrophomonas.maltophilia.2_TSB_5_1_0","Logistic"
+"3","0.996079715434777","-118.352316410701","-111.515837260769","Stenotrophomonas.maltophilia.2_TSB_5_1_0","Logisticlag"
+"4","0.996078451092306","-118.342965043545","-111.506485893612","Stenotrophomonas.maltophilia.2_TSB_5_1_0","Gompertz"
+"5","0.996453999821008","-121.262292010714","-114.425812860782","Stenotrophomonas.maltophilia.2_TSB_5_1_0","Baranyi"
+"6","NA","NA","NA","Stenotrophomonas.maltophilia.2_TSB_5_1_0","Buchanan"

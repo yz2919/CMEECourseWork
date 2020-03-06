@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.989297557976887,-3.77821819062444,-2.79209530394334,"Aerobic Mesophilic._Raw Chicken Breast_15_1_2","Cubic"
+"2",0.993080333821351,-9.70315791213254,-8.91425960278766,"Aerobic Mesophilic._Raw Chicken Breast_15_1_2","Logistic"
+"3",0.993403907319953,-8.13416856769911,-7.14804568101801,"Aerobic Mesophilic._Raw Chicken Breast_15_1_2","Logisticlag"
+"4",0.992072710622376,-6.47966524108591,-5.49354235440481,"Aerobic Mesophilic._Raw Chicken Breast_15_1_2","Gompertz"
+"5",0.993932225787825,-8.88553900682242,-7.89941612014132,"Aerobic Mesophilic._Raw Chicken Breast_15_1_2","Baranyi"
+"6",0.991546979534864,-5.90175120666532,-4.91562831998422,"Aerobic Mesophilic._Raw Chicken Breast_15_1_2","Buchanan"

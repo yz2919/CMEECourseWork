@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.558363620767034","20.8070836625292","24.9731503828103","Enterobacter.sp._TSB_35_1_0","Cubic"
+"2","0.904485155686707","-7.22340471768661","-3.89055134146174","Enterobacter.sp._TSB_35_1_0","Logistic"
+"3","0.997984287071419","-70.8146531227641","-66.648586402483","Enterobacter.sp._TSB_35_1_0","Logisticlag"
+"4","0.997283182318265","-65.740352330875","-61.5742856105939","Enterobacter.sp._TSB_35_1_0","Gompertz"
+"5","NA","NA","NA","Enterobacter.sp._TSB_35_1_0","Baranyi"
+"6","NA","NA","NA","Enterobacter.sp._TSB_35_1_0","Buchanan"

@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.996284249383517","-17.9702829673434","-15.9808066033515","Staphylococcus spp._Cooked Chicken Breast_15_1_2","Cubic"
+"2","0.98850361396983","-7.5463107498077","-5.95472965861421","Staphylococcus spp._Cooked Chicken Breast_15_1_2","Logistic"
+"3","0.996362725657278","-18.205090218589","-16.2156138545972","Staphylococcus spp._Cooked Chicken Breast_15_1_2","Logisticlag"
+"4","0.99629341504178","-17.997450235957","-16.0079738719651","Staphylococcus spp._Cooked Chicken Breast_15_1_2","Gompertz"
+"5","NA","NA","NA","Staphylococcus spp._Cooked Chicken Breast_15_1_2","Baranyi"
+"6","NA","NA","NA","Staphylococcus spp._Cooked Chicken Breast_15_1_2","Buchanan"

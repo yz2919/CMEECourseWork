@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.982549158992326,4.74197538317307,3.70077272931334,"Serratia marcescens_UHT Full-fat Milk_15_1_4","Cubic"
+"2",0.580871112820224,21.8147192020889,20.9817570790011,"Serratia marcescens_UHT Full-fat Milk_15_1_4","Logistic"
+"3",0.99682480196816,-5.48213165764606,-6.52333431150579,"Serratia marcescens_UHT Full-fat Milk_15_1_4","Logisticlag"
+"4",0.997982296610906,-8.20259210232913,-9.24379475618885,"Serratia marcescens_UHT Full-fat Milk_15_1_4","Gompertz"
+"5",0.993483806581275,-1.16860942968982,-2.20981208354954,"Serratia marcescens_UHT Full-fat Milk_15_1_4","Baranyi"
+"6",0.990026338497203,1.38533493809178,0.344132284232051,"Serratia marcescens_UHT Full-fat Milk_15_1_4","Buchanan"

@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1",0.834922560735991,18.9170684539436,19.9031913406247,"Arthrobacter citreus_TGE agar_37_1_5","Cubic"
+"2",0.878672347036521,14.1457890746254,14.9346873839703,"Arthrobacter citreus_TGE agar_37_1_5","Logistic"
+"3",0.903277807834834,14.1059220599261,15.0920449466072,"Arthrobacter citreus_TGE agar_37_1_5","Logisticlag"
+"4",0.901174265766101,14.299558569018,15.2856814556991,"Arthrobacter citreus_TGE agar_37_1_5","Gompertz"
+"5",0.90366617252386,14.069711980358,15.0558348670391,"Arthrobacter citreus_TGE agar_37_1_5","Baranyi"
+"6",0.904395742025181,14.001292446846,14.9874153335271,"Arthrobacter citreus_TGE agar_37_1_5","Buchanan"

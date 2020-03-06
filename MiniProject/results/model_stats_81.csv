@@ -1,0 +1,7 @@
+"","R_square","AIC","BIC","ID","Model"
+"1","0.784712074706041","0.225308093481726","4.08825170468063","Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2_TSB_35_1_0","Cubic"
+"2","0.717640492712923","2.56458470011696","5.65493958907608","Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2_TSB_35_1_0","Logistic"
+"3","NA","NA","NA","Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2_TSB_35_1_0","Logisticlag"
+"4","NA","NA","NA","Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2_TSB_35_1_0","Gompertz"
+"5","0.7465203066176","2.83822641656222","6.70117002776113","Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2_TSB_35_1_0","Baranyi"
+"6","NA","NA","NA","Pectobacterium.carotovorum.subsp..Carotovorum.Pcc2_TSB_35_1_0","Buchanan"
