@@ -15,17 +15,3 @@ mv ../results/Aerobic\ Psychotropic._Raw\ Chicken\ Breast_2_1_2.png ../results/e
 
 echo -e "\nGenerating report\n"
 bash CompileLaTeX.sh report 2>/dev/null
-
-## Create a pdf file
-#pdflatex miniproject.tex
-#bibtex miniproject
-##pdflatex miniproject.tex
-#pdflatex miniproject.tex
-#pdflatex miniproject.tex
-
-
-## Cleanup
-#rm *.aux
-#rm *.log
-#rm *.blg
-#rm *.bbl

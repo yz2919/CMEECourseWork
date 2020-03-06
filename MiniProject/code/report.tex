@@ -4,6 +4,7 @@
 \usepackage{float} %% fix graphs at where they should be
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{textcomp}
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{enumerate}
@@ -55,7 +56,7 @@
         \begin{figure}[!ht]
             \centering
                 \begin{center}
-                     \includegraphics[width=\linewidth]{../results/IMP_LOGO.jpg}
+                     \includegraphics[width=\linewidth]{../data/IMP_LOGO.jpg}
                 \end{center}
         \end{figure}
 
@@ -76,7 +77,7 @@
     	    \normalsize{March, 2020}
         \end{center}       
         \begin{flushright}
-		    \normalsize Approximate Word Count: %% insert approx word count
+		    \normalsize Approximate Word Count: 1500%% insert approx word count
 	    \end{flushright}
     \end{titlepage}
     
@@ -88,11 +89,9 @@
 \maketitle
 \linenumbers
 \begin{abstract}
-Several models(logistic, Gompertz, Baranyi, Buchunana) were compared by assessing the fits of the models of ...an emperical dataset
+Several non-linear models(logistic, Gompertz, Baranyi, Buchunana) were compared by assessing the fits of the models for an emperical dataset.
 \end{abstract}
 \textbf{Keywords:} Model selection, microbial population growth rate, model Comparison, logistic growth, Gompertz model, Baranyi model
-%The following code is not run because of the percentage sign, but you might find it useful for future work
-% \tableofcontents
 
 \section{Introduction}
 Linear and nonlinear regression analysis has become an essential tool to analyze biological data and make biological inferences. Models have been developed to allow the description of observed biological patterns in general ways which provide insight into responsible factors \citep{johnson2004model}. The approach of model selection offers a quantitative way to measure relative support for a set of competing hypotheses represented by models, which has become a preferred alternative to null hypothesis testing approach to answer ecological and evolutionary questions \citep{hilborn1997ecological}. \\
@@ -140,6 +139,13 @@ The maximum growth rate ($r_{max}$) is the tangent to the inflection point, $t_{
 The Baranyi model introduces a new dimensionless parameter $h_0$ which represents the initial physiological state of the cells. The length of the lag phase is determined by the value of $h_0$ at inoculation and the post-inoculation environment. Essentially it has the same four parameters as the Gompertz model.\\
 %Thus the definition of lag is independent from the shape of the growth curve, and the effect of the previous environment is separated from the effects of the present environment. This allows modeling growth without a lag period following inoculation from media favorable to growth to new media also favorable to growth. 
 \textbf{Buchunan Model(Eqn 6.)}
+\begin{equation}
+    N(t)=\left\{\begin{matrix}
+N_0 & if  t\leq t_{lag} \\ N_{max} + r_{max}\cdot (t-t_{lag})
+ & if t_{lag} < t < t_{max} \\N_{max}
+ & if t\geq t_{max} 
+\end{matrix}\right.
+\end{equation}
 
 \subsection{Data}
 The data used in this work are collected through lab experiments, sourced from ten different publications \citep{bae2014growth,bernhardt2018metabolic,galarz2016predicting,gill1991growth,phillips1987relation,roth1962continuity,silva2018modelling,sivonen1990effects, stannard1985temperature,zwietering1994modeling}. The collection contains growth data from 45 species with various culture conditions (different temperature and 18 types of medium) for varying replications and time. Prior to the use of the data for model fitting, negative values in population size were removed (population size cannot be negative in reality). The models were written in log to the base 10, therefore the population value was transformed to log base 10. The data was subdivided according to its species, culture medium, temperature, replicate time and citation.
@@ -155,8 +161,8 @@ The following starting values of the parameters were calculated:
 \end{itemize}
 
 \subsection{Model Selection Methods}
-Three commonly used model selection methods to identify the model best supported by the data(Table 1). The adjusted residual sum of squares (RSS), which regarded as the criteria for the fit quantity of models, are used to selected the data that is suitable for model selection. If the RSS of more than four models is "NA" or less than 0.75, the subset of data will be removed as it may be less informative for comparison than the others. For the data subset of interest, candidate models are compared by evaluating the relative support in the data subset of interest.
-The level of support for each candidate model was evaluated in following scheme: after models were fitted within each research, the minimal Akaike information criterion (AIC) was determined, and the delta AIC was calculated. The model(s) with the minimal AIC and the model(s) with delta AIC less than 2 was considered as the best model(s) \citep{burnham2004multimodel}. The percentage of which a candidate model is the best model out of all of the subset and that of a candidate model is the best out of the subset it fitted is collected as the score. The score of the Bayesian information criterion (BIC, also known as the Schwarz criterion, or SC) is collected in the same procedure. The model with the higher score is considered to be better supported.\\
+Three commonly used model selection methods to identify the model best supported by the data(Table 1). The adjusted residual sum of squares (RSS), which regarded as the criteria for the fit quantity of models, are used to selected the data that is suitable for model selection. If the RSS of more than four models is "NA" or less than 0.75, the subset of data will be removed as it may be less informative for comparison than the others. For the data subset of interest, candidate models are compared by evaluating the relative support in the data subset of interest.\\
+The level of support for each candidate model was evaluated in following scheme: after models were fitted within each research, the minimal Akaike information criterion (AIC) was determined, and the delta AIC was calculated. The model(s) with the minimal AIC and the model(s) with delta AIC less than 2 was considered as the best model(s) \citep{burnham2004multimodel}. The percentage of the number of times each model successfully converged out of all subsets is calculated as convergence score. The percentage of the number of which a candidate model is the best model out of all of the subset and that of a candidate model is the best out of the subset is collected as fitting score. The score of the Bayesian information criterion (BIC, also known as the Schwarz criterion, or SC) is collected in the same procedure. The model with the higher fitting score is considered to be better supported.\\
 \begin{center}
 \begin{table}[]
 \caption {Used commonly model selection methods}
@@ -179,18 +185,54 @@ Bayesian information criterion (BIC) & BIC = $-2ln[L(\hat{\theta_p}|y)]+p\cdot l
 \end{table}
 \end{center}
 \subsection{Computing Languages}
-Data preparation was carried out in python 3.6.7. Model fitting and comparison was done in R 3.4.4. R was used with packages "minpack.lm", "ggplot" and "dplyr" and Python was used with package "pandas". 
+\begin{figure}[!ht]
+            \centering
+                \begin{center}
+                     \includegraphics[width=\linewidth]{../results/stats.png}
+                     \caption{Overall convergence and fitting score of candidate models}
+                \end{center}
+        \end{figure}
+\begin{figure}[!ht]
+            \centering
+                \begin{center}
+                    \includegraphics[width=\linewidth]{../results/example.png}
+                     \caption{Growth curves of aerobic psychrotrophic bacteria in raw chicken breast at 2 \textdegree C fitted with 6 candidate models}
+                \end{center}
+        \end{figure}
+Data preparation was carried out in python 3.7.4. Model fitting and comparison was done in R 3.6.1. R was used with packages "minpack.lm", "ggplot", "dplyr" and "tidyr". Python was used with package "pandas", "scipy" and "numpy". 
 
 \section{Results}
-17 subset is removed according to RSS value.
+\begin{center}
+\begin{table}[]
+\caption {AIC and BIC fitting scores of candidate modesl}
+\begin{threeparttable}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Model       & Fitted AIC (\%) & AIC fitting score (\%) & Fitted BIC (\%) & BIC fitting score (\%) \\ \midrule
+Cubic       & 97.9            & 33.0                   & 97.9            & 32.3                   \\
+Logistic    & 99.3            & 49.7                   & 99.3            & 53.8                   \\
+Logisticlag & 91.3            & 56.2                   & 91.3            & 53.1                   \\
+Gompertz    & 88.2            & 83.7                   & 88.2            & 83.0                   \\
+Baranyi     & 82.3            & 62.2                   & 82.3            & 59.4                   \\
+Buchanan    & 25.7            & 16.3                   & 25.7            & 16.0                   \\ \bottomrule
+\end{tabular}}
 
-the lowest AIC and BIC for each experiment as well as the number of times each model successfully converged was tallied (Table 1.)
-
+ \begin{tablenotes}
+        \footnotesize
+        \item[] 
+      \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+\end{center}
+17 subset is removed according to RSS value. All of the models visually gave reasonably good fits of the data except for the Buchanan model (Figure 2 for example). Overall, the Logistic model has the highest convergence score and the Gomperzt model has the highest fitting score (Figure 1). The fitting scores of logistic model with four parameters was higher than the one of logistic model with three parameters. 
 
 
 \section{Discussion}
+In this work, 5 models were compared statistically and the results showed that for the data used, the Gompertz model can be regarded as the most sufficient models among the candidates to best describe about 83\% of the subsets (Table 2). The AIC and BIC fitting scores gave a similar results overall. The BIC fitting score (53.8\%) is higher than the AIC fitting score (53.8\%) for the three-parameter logistic model and for the four-parameter logistic model is true (BIC: 53.1\%, AIC:56.2\%). This is reasonable as the penalty term for the number of parameters in the model introduced in BIC than in AIC. According to both AIC and BIC fitting, the three-parameter logistic model and the four-parameter logistic model performed almost the same.\\
+Among all candidate models, the Buchanan model fitted the least number of subsets and received lowest fitting scores. The Buchanan model has been developed to emphasise the lag phase to help reconcile the known bacteria behaviour. However, the microbial data analysed in this work comes from various experiments which consist of different species grown in different conditions. The growth curves of the bacteria in this case does not always show a sigmoidal shape, which could gave difficulties fitting with the Buchanan model.
 
-\appendix
+
 
 
 
