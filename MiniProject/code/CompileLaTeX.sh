@@ -6,16 +6,16 @@ pdflatex $1.tex
 evince $1.pdf &
 
 ## Cleanup
-rm -f *~ 
-rm -f *.aux
-rm -f *.dvi
-rm -f *.log
-rm -f *.nav
-rm -f *.out
-rm -f *.snm
-rm -f *.toc
-rm -f *.bbl
-rm -f *.blg
-rm -f *.fls
-rm -f *.fdb_latexmk
+rm *~ 
+rm *.aux
+rm *.dvi
+rm *.log
+rm *.nav
+rm *.out
+rm *.snm
+rm *.toc
+rm *.bbl
+rm *.blg
+rm *.fls
+rm *.fdb_latexmk
 

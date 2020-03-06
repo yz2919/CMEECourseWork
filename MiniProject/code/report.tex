@@ -142,19 +142,21 @@ The Baranyi model introduces a new dimensionless parameter $h_0$ which represent
 \textbf{Buchunan Model(Eqn 6.)}
 
 \subsection{Data}
-The data used in this work are collected through lab experiments, sourced from ten different publications \citep{bae2014growth,bernhardt2018metabolic,galarz2016predicting,gill1991growth,phillips1987relation,roth1962continuity,silva2018modelling,sivonen1990effects, stannard1985temperature,zwietering1994modeling}. The collection contains growth data from 45 species with various culture conditions (temperature and 18 types of medium) for varying replications and time. Prior to the use of the data for model fitting, negative values in population size were removed (population size cannot be negative in reality). The models were written in log to the base 10, therefore the population value was transformed to log base 10.
+The data used in this work are collected through lab experiments, sourced from ten different publications \citep{bae2014growth,bernhardt2018metabolic,galarz2016predicting,gill1991growth,phillips1987relation,roth1962continuity,silva2018modelling,sivonen1990effects, stannard1985temperature,zwietering1994modeling}. The collection contains growth data from 45 species with various culture conditions (different temperature and 18 types of medium) for varying replications and time. Prior to the use of the data for model fitting, negative values in population size were removed (population size cannot be negative in reality). The models were written in log to the base 10, therefore the population value was transformed to log base 10. The data was subdivided according to its species, culture medium, temperature, replicate time and citation.
 
 %Some of the population data were direct counts while some were not.
 \subsection{Starting Values Calculation}
 The following starting values of the parameters were calculated:
 \begin{itemize}
 	\item $N_0$: population size at the start of the data
-    \item $N_{max}$: highest population size (equation: max(diff(data\$Log10N)/mean(diff(data\$Time))), where data is the used data and $Log10N$ is the log10 population value)
+    \item $N_{max}$: highest population size (equation: max(diff(data\$Log10N)/mean(diff(data\$Time))), where data is the used data and Log10N is the log10 population value)
     \item $r_{max}$: maximum growth rate by finding the highest slope of the curve
 	\item $t_{lag}$: time at which the difference of the log10 population value was at its peak (equation: data\$Time[which.max(diff(diff(data\$Log10N)))])
 \end{itemize}
+
 \subsection{Model Selection Methods}
-Three commonly used model selection methods to identify the model best supported by the data(Table 1)\\
+Three commonly used model selection methods to identify the model best supported by the data(Table 1). The adjusted residual sum of squares (RSS), which regarded as the criteria for the fit quantity of models, are used to selected the data that is suitable for model selection. If the RSS of more than four models is "NA" or less than 0.75, the subset of data will be removed as it may be less informative for comparison than the others. For the data subset of interest, candidate models are compared by evaluating the relative support in the data subset of interest.
+The level of support for each candidate model was evaluated in following scheme: after models were fitted within each research, the minimal Akaike information criterion (AIC) was determined, and the delta AIC was calculated. The model(s) with the minimal AIC and the model(s) with delta AIC less than 2 was considered as the best model(s) \citep{burnham2004multimodel}. The percentage of which a candidate model is the best model out of all of the subset and that of a candidate model is the best out of the subset it fitted is collected as the score. The score of the Bayesian information criterion (BIC, also known as the Schwarz criterion, or SC) is collected in the same procedure. The model with the higher score is considered to be better supported.\\
 \begin{center}
 \begin{table}[]
 \caption {Used commonly model selection methods}
@@ -176,22 +178,11 @@ Bayesian information criterion (BIC) & BIC = $-2ln[L(\hat{\theta_p}|y)]+p\cdot l
     \end{threeparttable}
 \end{table}
 \end{center}
-
-The result coincidence of the models were compared on accounts of AIC
-
-
-The comparison of model used 
-Maximizing fit
-The Akaike Information Criterion, or AIC, is the most widespread information criterion, and is defined as.
-data set are removed according to R square
-
 \subsection{Computing Languages}
-R (3.6.0) was used with packages ``minpack.lm“, ``stats"(Kruskal test and PCA) and ``PMCMR" (post-hoc Nemenyi pairwise comparisons).  Python (ver 3.7.3) was used with package ``subprocess" (streamline project workflow).
-
-Data preparation was done in python 3.6.7. Model fitting and comparison was done in R 3.4.4. 
+Data preparation was carried out in python 3.6.7. Model fitting and comparison was done in R 3.4.4. R was used with packages "minpack.lm", "ggplot" and "dplyr" and Python was used with package "pandas". 
 
 \section{Results}
-17 subset is removed because of R square
+17 subset is removed according to RSS value.
 
 the lowest AIC and BIC for each experiment as well as the number of times each model successfully converged was tallied (Table 1.)
 
