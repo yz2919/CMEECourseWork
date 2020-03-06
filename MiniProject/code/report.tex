@@ -146,7 +146,7 @@ N_0 & if  t\leq t_{lag} \\ N_{max} + r_{max}\cdot (t-t_{lag})
  & if t\geq t_{max} 
 \end{matrix}\right.
 \end{equation}
-
+The Buchanan model was developed by \citealp{buchanan1997simple} as a three-phase linear model which divides bacterial growth curves in to three specific phases with different equations. $t_{max}$ is the time at which the population size reach $N_{max}$.
 \subsection{Data}
 The data used in this work are collected through lab experiments, sourced from ten different publications \citep{bae2014growth,bernhardt2018metabolic,galarz2016predicting,gill1991growth,phillips1987relation,roth1962continuity,silva2018modelling,sivonen1990effects, stannard1985temperature,zwietering1994modeling}. The collection contains growth data from 45 species with various culture conditions (different temperature and 18 types of medium) for varying replications and time. Prior to the use of the data for model fitting, negative values in population size were removed (population size cannot be negative in reality). The models were written in log to the base 10, therefore the population value was transformed to log base 10. The data was subdivided according to its species, culture medium, temperature, replicate time and citation.
 
@@ -230,7 +230,7 @@ Buchanan    & 25.7            & 16.3                   & 25.7            & 16.0 
 
 \section{Discussion}
 In this work, 5 models were compared statistically and the results showed that for the data used, the Gompertz model can be regarded as the most sufficient models among the candidates to best describe about 83\% of the subsets (Table 2). The AIC and BIC fitting scores gave a similar results overall. The BIC fitting score (53.8\%) is higher than the AIC fitting score (53.8\%) for the three-parameter logistic model and for the four-parameter logistic model is true (BIC: 53.1\%, AIC:56.2\%). This is reasonable as the penalty term for the number of parameters in the model introduced in BIC than in AIC. According to both AIC and BIC fitting, the three-parameter logistic model and the four-parameter logistic model performed almost the same.\\
-Among all candidate models, the Buchanan model fitted the least number of subsets and received lowest fitting scores. The Buchanan model has been developed to emphasise the lag phase to help reconcile the known bacteria behaviour. However, the microbial data analysed in this work comes from various experiments which consist of different species grown in different conditions. The growth curves of the bacteria in this case does not always show a sigmoidal shape, which could gave difficulties fitting with the Buchanan model.
+Among all candidate models, the Buchanan model fitted the least number of subsets and received lowest fitting scores. The Buchanan model has been developed to emphasise the lag phase to help reconcile the known bacteria behaviour. However, the microbial data analysed in this work comes from various experiments which consist of different species grown in different conditions. The growth curves of the bacteria in this case does not always show a sigmoidal shape, which could gave difficulties fitting with the Buchanan model. The fact that the definition of lag is independent from the shape of the growth curve allows model with $t_{lag}$ parameter to model growth without a lag period, which could be the reason of the better performance of the Gompertz and the Baranyi model. 
 
 
 
