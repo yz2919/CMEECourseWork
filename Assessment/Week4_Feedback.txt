@@ -1,0 +1,704 @@
+Starting weekly assessment for Yuqing, Week4
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 91.87 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Week6, Week1, Week7, Assessment, Week5, Week2, Week3_RCoursework, Week9, Week4, .git, Project
+
+Found the following files in parent directory: .gitignore, README.md
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+*~ 
+*.tmp
+*.pdf
+*.pyc
+**********************************************************************
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+**********************************************************************
+# 2019 CMEE Coursework Yuqing Zhou
+> This repository contains the computing works for the CMEE course.
+
+## Topics
+
+### Week1
+Unix, shell scripting, version control with Git, LaTeX
+
+### Week2
+Biological Computing in Python I
+
+### Week3
+Biological computing in R; 
+Data management, exploration and visualization
+
+### Week4
+Stats with Sparrows
+
+### Week5
+Mapping and Geographic Information Systems (GIS) in R
+
+### Week6
+Genomics and Bioinformatics
+
+### Week7
+Biological Computing in Python II
+
+### Week8
+Miniproject
+
+### Week9
+High Performance Computing
+
+
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 8 weekly directories: Week1, Week2, Week3_RCoursework, Week4, Week5, Week6, Week7, Week9
+
+The Week4 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK4...
+
+Found the following directories: code, sandbox, data, results
+
+Found the following files: README.md
+
+Checking for readme file in weekly directory...
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+**********************************************************************
+# 2019 CMEE Coursework Week4 Yuqing Zhou
+> Topics: StatsWithSparrow
+
+## Content
+
+### StatswithSparrows1_4.R
+Script for handout of StatsWithSparrows 1-4.
+
+### StatswithSparrows5.R
+Script for handout of StatsWithSparrows 5.
+
+### StatswithSparrows10.R
+Script for handout of StatsWithSparrows 10.
+
+### StatswithSparrows13.R
+Script for handout of StatsWithSparrows 13.
+
+### StatswithSparrows14.R
+Script for handout of StatsWithSparrows 14.
+
+### StatswithSparrows17.R
+Script for handout of StatsWithSparrows 17 on non-parametric statistics.
+
+### StatswithSparrows18.R
+Script for handout of StatsWithSparrows 18 on observer repeatability.
+**********************************************************************
+
+Found following files in results directory: README.md...
+
+Found 7 code files: StatswithSparrows1_4.R, StatswithSparrows13.R, StatswithSparrows14.R, StatswithSparrows10.R, StatswithSparrows18.R, StatswithSparrows5.R, StatswithSparrows17.R
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file StatswithSparrows1_4.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatsWithSparrows1_4.R
+# Desc: Script for handout of StatsWithSparrow 1-4
+# Arguments: 0
+# Date: Oct 2019
+
+rm(list = ls())
+getwd()
+d <- read.table("../data/SparrowSize.txt", header = TRUE)
+str(d)
+names(d)
+head(d)
+length(d$Tarsus)
+hist(d$Tarsus)
+#mean and median
+help(mean)
+mean(d$Tarsus, na.rm = TRUE)
+median(d$Tarsus, na.rm = TRUE)
+par(mfrow= c(2,2))
+hist(d$Tarsus, breaks = 3, col = "grey")
+hist(d$Tarsus, breaks = 10, col = "grey")
+hist(d$Tarsus, breaks = 30, col = "grey")
+hist(d$Tarsus, breaks = 100, ccol = "grey")
+require(plyr)
+count(d$Tarsus)
+range(d$Tarsus, na.rm = TRUE)
+d2 <- subset(d, d$Tarsus!= "NA")
+range(d2$Tarsus, na.rm = TRUE)  
+var(d$Tarsus, na.rm = TRUE)
+var(d2$Tarsus, na.rm = TRUE)
+sum((d2$Tarsus - mean(d2$Tarsus))^2)/(length(d2$Tarsus) - 1)
+sqrt(var(d2$Tarsus))
+sqrt(0.74)
+sd(d2$Tarsus)
+#z score
+zTarsus <- (d2$Tarsus - mean(d2$Tarsus))/sd(d2$Tarsus)
+sd(zTarsus)
+par(mfrow = c(1,1))
+hist(zTarsus)
+var(zTarsus)
+set.seed(123)
+znormal <- rnorm(1e+06)
+hist(znormal, breaks = 100)
+summary(znormal)
+qnorm(c(0.025, 0.975))
+pnorm(.Last.value)
+qnorm(c(0.25, 0.75))
+pnorm(.Last.value)
+?.Last.value
+par(mfrow = c(1,2))
+hist(znormal, breaks = 100)
+abline(v=qnorm(c(0.25,0.5,0.75)), lwd = 2)
+abline(v=qnorm(c(0.025, 0.975)), lwd = 2, lty = "dashed")
+plot(density(znormal))
+abline(v=qnorm(c(0.25, 0.5, 0.75)), col="gray")
+abline(v = qnorm(c(0.025, 0.975)), lty = "dotted", col = "black")
+abline(h = 0, lwd = 3, col = "blue")
+text(2, 0.3, "1.96", col = "red", adj = 0)
+text(-2, 0.3, "-1.96", col = "red", adj = 1)
+#Standard errors
+d1 <- subset(d, d$Tarsus!="NA")
+seTarsus <- sqrt(var(d1$Tarsus)/length(d1$Tarsus))
+seTarsus
+d12001 <- subset(d1, d1$Year==2001)                 
+seTarsus2001 <- sqrt(var(d12001$Tarsus)/length(d12001$Tarsus))
+seTarsus2001
+dMass <- subset(d, d$Mass!="NA")
+seMass <- sqrt(var(dMass$Mass)/length(dMass$Mass))
+seMass
+dWing <- subset(d, d$Wing!="NA")
+seWing <- sqrt(var(dWing$Wing)/length(dWing$Wing))
+seWing
+dBill <- subset(d, d$Bill!="NA")
+seBill <- sqrt(var(dBill$Bill))/length(dBill$Bill)
+seBill
+d1 <- subset(d, d$Year==2001)
+dMass <- subset(d1, d1$Mass!="NA")
+seMass <- sqrt(var(dMass$Mass)/length(dMass$Mass))
+seMass
+dWing <- subset(d1, d1$Wing!="NA")
+seWing <- sqrt(var(dWing$Wing)/length(dWing$Wing))
+seWing
+dBill <- subset(d1, d1$Bill!="NA")
+seBill <- sqrt(var(dBill$Bill))/length(dBill$Bill)
+seBill
+**********************************************************************
+
+Testing StatswithSparrows1_4.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] "/home/mhasoba/Documents/Teaching/IC_CMEE/2019-20/Coursework/StudentRepos/YuqingZhou_YZ2919/Week4/code"
+'data.frame':	1770 obs. of  8 variables:
+ $ BirdID: int  1 2 2 2 2 2 2 2 2 2 ...
+ $ Year  : int  2002 2001 2002 2003 2004 2004 2004 2004 2004 2005 ...
+ $ Tarsus: num  16.9 16.8 17.2 17.5 17.8 ...
+ $ Bill  : num  NA NA NA 13.5 13.4 ...
+ $ Wing  : num  76 76 76 76 77 78 77 77 77 77 ...
+ $ Mass  : num  23.6 27.5 28.1 27.8 26.5 ...
+ $ Sex   : int  0 1 1 1 1 1 1 1 1 1 ...
+ $ Sex.1 : Factor w/ 2 
+**********************************************************************
+
+Encountered error (or warning):
+Warning messages:
+1: In plot.window(xlim, ylim, "", ...) :
+  "ccol" is not a graphical parameter
+2: In title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...) :
+  "ccol" is not a graphical parameter
+3: In axis(1, ...) : "ccol" is not a graphical parameter
+4: In axis(2, ...) : "ccol" is not a graphical parameter
+Loading required package: plyr
+
+======================================================================
+Inspecting script file StatswithSparrows13.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatswithSparrows13.R
+# Desc: Script for handout of StatsWithSparrows 13
+# Arguments: 0
+# Date: Oct 2019
+
+rm(list=ls())
+d<-read.table("../data/SparrowSize.txt", header=TRUE)
+d1<-subset(d, d$Wing!="NA")
+model1<-lm(Wing~Sex.1,data=d1)
+summary(model1)
+boxplot(d1$Wing~d1$Sex.1, ylab="Wing length (mm)")
+anova(model1)
+t.test(d1$Wing~d1$Sex.1, var.equal=TRUE)
+boxplot(d1$Wing~d1$BirdID, ylab="Wing length (mm)")
+require(dplyr)
+tbl_df(d1)
+glimpse(d1)
+d$Mass %>% cor.test(d$Tarsus, na.rm=TRUE)
+d1 %>%group_by(BirdID) %>%summarise (count=length(BirdID))%>%count(count)
+#Run a linear model on a subset of data
+model3<-lm(Wing~as.factor(BirdID), data=d1)
+anova(model3)
+boxplot(d$Mass~d$Year)
+m2<-lm(d$Mass~as.factor(d$Year))
+anova(m2)
+summary(m2)
+t(model.matrix(m2))
+  **********************************************************************
+
+Testing StatswithSparrows13.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+Call:
+lm(formula = Wing ~ Sex.1, data = d1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-16.0961  -1.0961  -0.0961   1.3683   5.3683 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 76.09611    0.07175 1060.50   <2e-16 ***
+Sex.1male    2.53562    0.09998   25.36   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.057 on 1693 degrees of freedom
+Multiple R-squared:  0.2753,	Adjusted R-squared:  0.
+**********************************************************************
+
+Encountered error (or warning):
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+======================================================================
+Inspecting script file StatswithSparrows14.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatswithSparrows14.R
+# Desc: Script for handout of StatsWithSparrows 14
+# Arguments: 0
+# Date: Oct 2019
+
+rm(list=ls())
+d<-read.table("../data/SparrowSize.txt", header=TRUE)
+d1<-subset(d, d$Wing!="NA")
+model3<-lm(Wing~as.factor(BirdID), data=d1)
+require(dplyr)
+d1 %>%group_by(BirdID) %>%summarise (count=length(BirdID))
+d1 %>%group_by(BirdID) %>%summarise (count=length(BirdID))%>%summarise (sum(count^2))
+(1/617)*(1695-7307/1695)
+anova(model3)
+print("Therepeatability is ")
+((13.20-1.62)/2.74)/(1.62+(13.20-1.62)/2.74)
+**********************************************************************
+
+Testing StatswithSparrows14.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+# A tibble: 618 x 2
+   BirdID count
+    <int> <int>
+ 1      1     1
+ 2      2    10
+ 3      3     1
+ 4      4     1
+ 5      5     9
+ 6      6     4
+ 7      7     2
+ 8      8     1
+ 9      9     1
+10     10     3
+# … with 608 more rows
+# A tibble: 1 x 1
+  `sum(count^2)`
+           <dbl>
+1           7307
+[1] 2.740177
+Analysis of Variance Table
+
+Response: Wing
+                    Df Sum Sq Mean Sq F value    Pr(>F)    
+as.factor(BirdID)  617 8147.3 13.2047  8.1734 < 2.2e-16 ***
+Residuals         107
+**********************************************************************
+
+Encountered error (or warning):
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+======================================================================
+Inspecting script file StatswithSparrows10.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatsWithSparrows10.R
+# Desc: Script for handout of StatsWithSparrow 10
+# Arguments: 0
+# Date: Oct 2019
+
+rm(list=ls())
+d<-read.table("../data/SparrowSize.txt", header=TRUE)
+plot(d$Mass~d$Tarsus, ylab="Mass (g)", xlab="Tarsus (mm)", pch=19, cex=0.4)
+x<-c(1:100)
+b<-0.5
+m<-1.5
+y<-m*x+b
+plot(x,y, xlim=c(0,100), ylim=c(0,100), pch=19, cex=0.5)
+
+plot(d$Mass~d$Tarsus, ylab="Mass (g)", xlab="Tarsus (mm)", pch=19, cex=0.4,ylim=c(-5,38), xlim=c(0,22))
+plot(d$Mass~d$Tarsus, ylab="Mass (g)", xlab="Tarsus (mm)", pch=19, cex=0.4)
+# strip dataset
+d1<-subset(d, d$Mass!="NA")
+d2<-subset(d1, d1$Tarsus!="NA")
+length(d2$Tarsus)
+model1<-lm(Mass~Tarsus, data=d2)
+summary(model1)
+hist(model1$residuals)
+model2<-lm(y~x)
+summary(model2)
+
+d2$z.Tarsus<-scale(d2$Tarsus)
+model3<-lm(Mass~z.Tarsus, data=d2)
+summary(model3)
+
+plot(d2$Mass~d2$z.Tarsus, pch=19, cex=0.4)
+abline(v = 0, lty = "dotted")
+
+d$Sex<-as.numeric(d$Sex)
+par(mfrow = c(1, 2))
+plot(d$Wing ~ d$Sex.1, ylab="Wing(mm)")
+plot(d$Wing ~ d$Sex, xlab="Sex", xlim=c(-0.1,1.1), ylab="")
+abline(lm(d$Wing ~ d$Sex), lwd = 2)
+text(0.15, 76, "intercept")
+text(0.9, 77.5, "slope", col = "red")
+
+d4<-subset(d, d$Wing!="NA")
+m4<-lm(Wing~Sex, data=d4)
+t4<-t.test(d4$Wing~d4$Sex, var.equal=TRUE)
+summary(m4)
+
+t4
+par(mfrow=c(2,2))
+plot(model3)
+par(mfrow=c(2,2))
+plot(m4)**********************************************************************
+
+Testing StatswithSparrows10.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1] 1644
+
+Call:
+lm(formula = Mass ~ Tarsus, data = d2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.7271 -1.2202 -0.1302  1.1592  7.5036 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  5.83246    0.98195    5.94 3.48e-09 ***
+Tarsus       1.18466    0.05295   22.37  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.841 on 1642 degrees of freedom
+Multiple R-squared:  0.2336,	Adjusted R-squared:  0.
+**********************************************************************
+
+Encountered error (or warning):
+Warning message:
+In summary.lm(model2) : essentially perfect fit: summary may be unreliable
+
+======================================================================
+Inspecting script file StatswithSparrows18.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatswithSparrows18.R
+# Desc: Script for handout of StatsWithSparrows 18 on observer repeatability
+# Arguments: 0
+# Date: Oct 2019
+
+
+a<-read.table("../data/ObserverRepeatability.txt", header=T)
+require(dplyr)
+a %>%group_by(StudentID) %>%summarise (count=length(StudentID))%>%
+  summarise (length(StudentID))
+a %>%group_by(StudentID) %>%summarise (count=length(StudentID))%>%
+  summarise (sum(count))
+length(a$StudentID)
+a %>%group_by(StudentID) %>%summarise (count=length(StudentID))%>%
+  summarise (sum(count^2))
+#check mean squares
+mod<-lm(Tarsus~StudentID,data=a)
+anova(mod)
+# bill width
+mod<-lm(Tarsus~Leg+Handedness+StudentID,data=a)
+anova(mod)
+require(lme4)
+lmm<-lmer(Tarsus~Leg+Handedness+(1|StudentID),data=a)
+summary(lmm)
+**********************************************************************
+
+Testing StatswithSparrows18.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+# A tibble: 1 x 1
+  `length(StudentID)`
+                <int>
+1                  80
+# A tibble: 1 x 1
+  `sum(count)`
+         <int>
+1          151
+[1] 151
+# A tibble: 1 x 1
+  `sum(count^2)`
+           <dbl>
+1            333
+Analysis of Variance Table
+
+Response: Tarsus
+          Df Sum Sq Mean Sq F value    Pr(>F)    
+StudentID 79 561.95  7.1133  4.2004 2.095e-09 ***
+Residuals 71 120.24  1.6935                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Analysis of Var
+**********************************************************************
+
+Encountered error (or warning):
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: lme4
+Loading required package: Matrix
+Loading required package: methods
+
+Attaching package: ‘lme4’
+
+The following object is masked from ‘package:stats’:
+
+    sigma
+
+Warning message:
+'rBind' is deprecated.
+ Since R version 3.2.0, base's rbind() should work fine with S4 objects 
+
+======================================================================
+Inspecting script file StatswithSparrows5.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatsWithSparrows5.R
+# Desc: Script for handout of StatsWithSparrows 5
+# Arguments: 0
+# Date: Oct 2019
+
+rm(list=ls())
+d<-read.table("../data/SparrowSize.txt", header=TRUE)
+boxplot(d$Mass~d$Sex.1, col = c("red", "blue"), ylab="Body mass (g)")
+t.test1 <- t.test(d$Mass~d$Sex.1)
+t.test1
+d1<-as.data.frame(head(d, 50))
+length(d1$Mass)
+t.test2 <- t.test(d1$Mass~d1$Sex)
+t.test2
+
+## Excercise
+d2<-subset(d, d$Year==2001)
+library(ggplot2)
+**********************************************************************
+
+Testing StatswithSparrows5.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+	Welch Two Sample t-test
+
+data:  d$Mass by d$Sex.1
+t = -5.5654, df = 1682.9, p-value = 3.039e-08
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.7669117 -0.3672162
+sample estimates:
+mean in group female   mean in group male 
+            27.46852             28.03558 
+
+[1] 50
+
+	Welch Two Sample t-test
+
+data:  d1$Mass by d1$Sex
+t = 0.33484, df = 26.84, p-value = 0.7403
+alternative hypothesis: true difference in means is not equal to 0
+95 perce
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.66875s
+
+======================================================================
+Inspecting script file StatswithSparrows17.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: StatswithSparrows17.R
+# Desc: Script for handout of StatsWithSparrows 17 on non-parametric statistics
+# Arguments: 0
+# Date: Oct 2019
+
+#Chi-square test
+hairEyes<-matrix(c(34,59,3,10,42,47),ncol=2,
+                 dimnames=list(Hair=c("Black","Brown","Blond"),
+                               Eyes=c("Brown","Blue")))
+hairEyes
+rowTot<-rowSums(hairEyes)
+colTot<-colSums(hairEyes)
+tabTot<-sum(hairEyes)
+Expected<-outer(rowTot,colTot)/tabTot
+cellChi<-(hairEyes-Expected)^2/Expected
+tabChi<-sum(cellChi)
+tabChi
+1-pchisq(tabChi,df=2)
+hairChi<-chisq.test(hairEyes)
+print(hairChi)
+**********************************************************************
+
+Testing StatswithSparrows17.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+       Eyes
+Hair    Brown Blue
+  Black    34   10
+  Brown    59   42
+  Blond     3   47
+[1] 54.63907
+[1] 1.365463e-12
+
+	Pearson's Chi-squared test
+
+data:  hairEyes
+X-squared = 54.639, df = 2, p-value = 1.365e-12
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.10523s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 5 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 100
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!

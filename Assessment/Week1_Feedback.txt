@@ -9,32 +9,70 @@ Note that:
 
 ======================================================================
 ======================================================================
-Your Git repo size this week is about 1.61 MiB on disk 
+Your Git repo size this week is about 91.87 MiB on disk 
 
 PART 1: Checking project workflow...
 
-Found the following directories in parent directory: Week1, Assessment, Week2, .git
+Found the following directories in parent directory: Week6, Week1, Week7, Assessment, Week5, Week2, Week3_RCoursework, Week9, Week4, .git, Project
 
-Found the following files in parent directory: README.txt
+Found the following files in parent directory: .gitignore, README.md
 
 Checking for key files in parent directory...
 
-.gitignore missing, 1 pt deducted
+Found .gitignore in parent directory, great! 
 
-Current Points = 99
-
-Found README in parent directory, named: README.txt
-
-Printing contents of README.txt:
+Printing contents of .gitignore:
 **********************************************************************
-My CMEE Coursework Repository
-Do I like this better?
+*~ 
+*.tmp
+*.pdf
+*.pyc
+**********************************************************************
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+**********************************************************************
+# 2019 CMEE Coursework Yuqing Zhou
+> This repository contains the computing works for the CMEE course.
+
+## Topics
+
+### Week1
+Unix, shell scripting, version control with Git, LaTeX
+
+### Week2
+Biological Computing in Python I
+
+### Week3
+Biological computing in R; 
+Data management, exploration and visualization
+
+### Week4
+Stats with Sparrows
+
+### Week5
+Mapping and Geographic Information Systems (GIS) in R
+
+### Week6
+Genomics and Bioinformatics
+
+### Week7
+Biological Computing in Python II
+
+### Week8
+Miniproject
+
+### Week9
+High Performance Computing
+
+
 **********************************************************************
 
 ======================================================================
 Looking for the weekly directories...
 
-Found 2 weekly directories: Week1, Week2
+Found 8 weekly directories: Week1, Week2, Week3_RCoursework, Week4, Week5, Week6, Week7, Week9
 
 The Week1 directory will be assessed 
 
@@ -45,52 +83,67 @@ PART 2: Checking weekly code and workflow...
 ======================================================================
 Assessing WEEK1...
 
-Found the following directories: Code, Data, Sandbox, Results
+Found the following directories: Code, Data, Sandbox, results, Results
 
-Found the following files: README.txt
+Found the following files: README.md
 
 Checking for readme file in weekly directory...
 
-Found README in parent directory, named: README.txt
+Found README in parent directory, named: README.md
 
-Printing contents of README.txt:
+Printing contents of README.md:
 **********************************************************************
-UnixPrac1.txt
-Answer for FASTA exercise.
 
-boilerplate.sh
-First shell script which prints "This is a shell script!".
+# 2019 CMEE Coursework Week1 Yuqing Zhou
+> Topics: Unix, shell scripting, version control with Git, LaTeX
 
-tabtocsv.sh
-A shell script which can convert a file into its csv version.
+## Content
 
-variables.sh
-A script plays a really easy number game with you. 
+### CompileLaTex.sh
+Compiles LaTex with bibliograpy into pdf.
 
-MyExampleScript.sh
-A script says hello to you.
+### ConcatenateTwoFiles.sh
+Concatenate the contents of two files.
 
-CountLines.sh
-Can count line in a file.
+### CountLines.sh
+Count number of lines in an input file.
 
-ConcatenateTwoFiles.sh
-Can concatenate the contents of two files.
+### FirstBiblio.bib
+A citation for the Einstein 1905 paper.
 
-tiff2png.sh
-Can convert tiff to .jpg.
+### FirstExample.tex
+A `LaTeX` file which can create a pdf of the article.
 
-csvtospace.sh
-Can convert csv file into a space separated values file.
-!!!To convert all csv file, please bash csvtospace.sh with “”, i.e. “*.csv”!!!**********************************************************************
+### MyExampleScript.sh
+Print "hello" in two coding methods.
 
-Found following files in results directory: ...
+### UnixPrac1.txt
+Answer for FASTA exercise:
+1. Count lines of three fasta files in `Data` directory;
+2. Print everything starting from the second line for the `E.coli` genome in `Data` directory;
+3. Count sequence length of the `E.coli` genome;
+4. Count the matches of particular sequence in the `E.coli` genome;
+5. Compute the AT/GC ratio of the `E.coli` genome.
+
+### boilerplate.sh
+Prints "This is a shell script!".
+
+### csvtospace.sh
+Convert `.csv` file into a space separated values file.
+
+### tabtocsv.sh
+Substitute the tabs in the files with commas.
+
+### tiff2png.sh
+Convert tiff to `.jpg`.
+
+### variables.sh
+Examples of assigning values to variables.
+**********************************************************************
+
+Found following files in results directory: README.md...
 
 Found 12 code files: ConcatenateTwoFiles.sh, CompileLaTex.sh, CountLines.sh, variables.sh, tiff2png.sh, csvtospace.sh, FirstExample.tex, MyExampleScript.sh, FirstBiblio.bib, UnixPrac1.txt, tabtocsv.sh, boilerplate.sh
-
-Found the following extra files: FirstExample.bbl, FirstExample.blg, FirstExample.pdf
-0.5 pt deducted per extra file
-
-Current Points = 97.5
 
 ======================================================================
 Testing script/code files...
@@ -102,10 +155,18 @@ File contents are:
 **********************************************************************
 #!/bin/bash
 
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: ConcatenateTwoFiles.sh
+# Description: Concatenate the contents of two files
+
+# Arguments: 1
+# Date: Oct 2019
+
 cat $1 > $3
 cat $2 >> $3
 echo "Merged File is"
-cat $3**********************************************************************
+cat $3
+**********************************************************************
 
 Testing ConcatenateTwoFiles.sh...
 
@@ -117,8 +178,8 @@ Merged File is
 **********************************************************************
 
 Encountered error (or warning):
-ConcatenateTwoFiles.sh: line 3: $3: ambiguous redirect
-ConcatenateTwoFiles.sh: line 4: $3: ambiguous redirect
+ConcatenateTwoFiles.sh: line 10: $3: ambiguous redirect
+ConcatenateTwoFiles.sh: line 11: $3: ambiguous redirect
 
 ======================================================================
 Inspecting script file CompileLaTex.sh...
@@ -126,6 +187,14 @@ Inspecting script file CompileLaTex.sh...
 File contents are:
 **********************************************************************
 #!/bin/bash
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: CompileLaTeX.sh
+# Description: Compile LaTeX script with bibliography file into pdf
+# Arguments: 1
+# Date: Oct 2019
+
+
 pdflatex $1.tex
 pdflatex $1.tex
 bibtex $1
@@ -141,7 +210,10 @@ rm *.log
 rm *.nav
 rm *.out
 rm *.snm
-rm *.toc**********************************************************************
+rm *.toc
+rm *.bbl
+rm *.blg
+**********************************************************************
 
 Testing CompileLaTex.sh...
 
@@ -175,30 +247,32 @@ rm: cannot remove '*.nav': No such file or directory
 rm: cannot remove '*.out': No such file or directory
 rm: cannot remove '*.snm': No such file or directory
 rm: cannot remove '*.toc': No such file or directory
+rm: cannot remove '*.bbl': No such file or directory
+rm: cannot remove '*.blg': No such file or directory
 
-** (evince:8500): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2019-20/Coursework/StudentRepos/YuqingZhou_YZ2919/Week1/Code/.pdf': No such file or directory
+** (evince:12722): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2019-20/Coursework/StudentRepos/YuqingZhou_YZ2919/Week1/Code/.pdf': No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:8500): WARNING **: Error setting file metadata: No such file or directory
+** (evince:12722): WARNING **: Error setting file metadata: No such file or directory
 
 ======================================================================
 Inspecting script file CountLines.sh...
@@ -207,9 +281,17 @@ File contents are:
 **********************************************************************
 #!/bin/bash
 
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: CountLines.sh
+# Desc: Count number of lines in the input file
+
+# Arguments: 1
+# Date: Oct 2019
+
 NumLines=`wc -l < $1`
 echo "The file $1 has $NumLines lines"
-echo**********************************************************************
+echo
+**********************************************************************
 
 Testing CountLines.sh...
 
@@ -222,7 +304,7 @@ The file  has  lines
 **********************************************************************
 
 Encountered error (or warning):
-CountLines.sh: line 3: $1: ambiguous redirect
+CountLines.sh: line 10: $1: ambiguous redirect
 
 ======================================================================
 Inspecting script file variables.sh...
@@ -230,6 +312,12 @@ Inspecting script file variables.sh...
 File contents are:
 **********************************************************************
 #!/bin/bash
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: variables.sh
+# Description: Examples of assigning values to variables
+# Arguments: interactive
+# Date: Oct 2019
 
 # Shows the use of variables
 MyVar='some string'
@@ -242,7 +330,8 @@ echo 'the current value of the variable is' $MyVar
 echo 'Enter two numbers sperated by space(s)'
 read a b
 echo 'you entered' $a 'and' $b '. Their sum is:'mysum=`expr $a + $b`
-echo $mysum**********************************************************************
+echo $mysum
+**********************************************************************
 
 Testing variables.sh...
 
@@ -268,11 +357,18 @@ File contents are:
 **********************************************************************
 #!/bin/bash
 
+# Author: Yuqing yz2919@imperial.ac.uk
+# Script: tabtocsv.sh
+# Description: Convert tiff to `.jpg`
+# Arguments: 1
+# Date: Oct 2019
+
 for f in *.tif;
     do
         echo "Converting $f";
         convert "$f"  "$(basename "$f" .tif).jpg";
-    done**********************************************************************
+    done
+**********************************************************************
 
 Testing tiff2png.sh...
 
@@ -296,7 +392,7 @@ File contents are:
 # Author: Yuqing Zhou yz2919@imperial.ac.uk
 # Script: csvtospace.sh
 # Description: converts a comma separated values file to a space separated values file
-#
+# Arguments: 1
 # Date: Oct 2019
 
 for f in $1;
@@ -306,7 +402,8 @@ for f in $1;
         echo "Done"
     done
 
-#exit**********************************************************************
+#exit
+**********************************************************************
 
 Testing csvtospace.sh...
 
@@ -318,7 +415,7 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.00327s
+Time consumed = 0.00451s
 
 ======================================================================
 Inspecting script file FirstExample.tex...
@@ -349,7 +446,8 @@ File contents are:
 
     \bibliographystyle{plain}
     \bibliography{FirstBiblio}
-\end{document}**********************************************************************
+\end{document}
+```**********************************************************************
 
 Testing FirstExample.tex...
 
@@ -360,11 +458,18 @@ File contents are:
 **********************************************************************
 #!/bin/bash
 
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: MyExampleScript.sh
+# Description: print "hello" in two coding methods.
+# Arguments: 0
+# Date: Oct 2019
+
 msg1="Hello"
 msg2=$USER
 echo "$msg1 $msg2"
 echo "Hello $USER"
-echo**********************************************************************
+echo
+**********************************************************************
 
 Testing MyExampleScript.sh...
 
@@ -379,7 +484,7 @@ Hello mhasoba
 
 Code ran without errors
 
-Time consumed = 0.00381s
+Time consumed = 0.00322s
 
 ======================================================================
 Inspecting script file FirstBiblio.bib...
@@ -404,7 +509,7 @@ Inspecting script file UnixPrac1.txt...
 File contents are:
 **********************************************************************
 #1 Count how many lines are in each file
-$ wc -l ../Data/*.fasta
+$ wc -l ../data/*.fasta
 
 
 #2 Print the E. coli genome from the second line
@@ -412,15 +517,15 @@ $ tail -n +2 E.coli.fasta
 
 
 #3 Count the sequence length of the E.coli genome
-$ grep -v '>' ../Data/E.coli.fasta | tr -d "\n" | wc -c
+$ grep -v '>' ../data/E.coli.fasta | tr -d "\n" | wc -c
 
 
 #4 Count the matches of a particular sequence, "ATGC" in the genome of E. coli 
-$ cat ../Data/E.coli.fasta | tail -n +2 | tr -d '\n' | grep -o "ATGC" | wc -l
+$ cat ../data/E.coli.fasta | tail -n +2 | tr -d '\n' | grep -o "ATGC" | wc -l
 
 
 #5 Compute the AT/GC ratio. That is, the (A+T)/(G+C) ratio.
-$ echo $(cat ../Data/E.coli.fasta | grep -v ">" | grep -o "A\|T" | wc -l) / $(cat ../Data/E.coli.fasta | grep -v ">" | grep -o "G\|C" | wc -l) | bc -l**********************************************************************
+$ echo $(cat ../data/E.coli.fasta | grep -v ">" | grep -o "A\|T" | wc -l) / $(cat ../Data/E.coli.fasta | grep -v ">" | grep -o "G\|C" | wc -l) | bc -l**********************************************************************
 
 Testing UnixPrac1.txt...
 
@@ -430,18 +535,20 @@ Inspecting script file tabtocsv.sh...
 File contents are:
 **********************************************************************
 #!/bin/bash
-#Author: Yuqing yz2919@imperial.ac.uk
-#Script:tabtocsv.sh
-#Description: substitute the tabs in the files with commas
 
-#saves the output into a .csv file
-#Arguments: 1 -> tab delimited file
-#Date: Oct 2019
+# Author: Yuqing yz2919@imperial.ac.uk
+# Script: tabtocsv.sh
+# Description: substitute the tabs in the files with commas
+
+# saves the output into a .csv file
+# Arguments: 1 -> tab delimited file
+# Date: Oct 2019
 
 echo "Creating a comma delimited version of $1 ..."
 cat $1 | tr -s "\t" "," >> $1.csv
 echo "Done!"
-exit**********************************************************************
+exit
+**********************************************************************
 
 Testing tabtocsv.sh...
 
@@ -455,7 +562,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00391s
+Time consumed = 0.00403s
 
 ======================================================================
 Inspecting script file boilerplate.sh...
@@ -463,11 +570,11 @@ Inspecting script file boilerplate.sh...
 File contents are:
 **********************************************************************
 #!/bin/bash
-#Author: Yuqing yz2919@imperial.ac.uk
-#Script: boilerplate.sh
-#Desc: simple boilerplate for shell scripts
-#Arguments: none
-#Date: Oct 2019
+# Author: Yuqing yz2919@imperial.ac.uk
+# Script: boilerplate.sh
+# Desc: simple boilerplate for shell scripts
+# Arguments: none
+# Date: Oct 2019
 echo -e "\nThis is a shell script! \n"
 #exit**********************************************************************
 
@@ -484,7 +591,7 @@ This is a shell script!
 
 Code ran without errors
 
-Time consumed = 0.00462s
+Time consumed = 0.00539s
 
 ======================================================================
 ======================================================================
@@ -497,6 +604,6 @@ Ran into 5 errors
 
 FINISHED WEEKLY ASSESSMENT
 
-Current Points for the Week = 97.5
+Current Points for the Week = 100
 
 NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!

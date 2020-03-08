@@ -9,13 +9,13 @@ Note that:
 
 ======================================================================
 ======================================================================
-Your Git repo size this week is about 1.61 MiB on disk 
+Your Git repo size this week is about 91.87 MiB on disk 
 
 PART 1: Checking project workflow...
 
-Found the following directories in parent directory: Week1, Week7, Assessment, Week2, Week3_RCoursework, Week4, .git
+Found the following directories in parent directory: Week6, Week1, Week7, Assessment, Week5, Week2, Week3_RCoursework, Week9, Week4, .git, Project, MiniProject
 
-Found the following files in parent directory: README.txt, .gitignore
+Found the following files in parent directory: .gitignore, README.md
 
 Checking for key files in parent directory...
 
@@ -29,18 +29,50 @@ Printing contents of .gitignore:
 *.pyc
 **********************************************************************
 
-Found README in parent directory, named: README.txt
+Found README in parent directory, named: README.md
 
-Printing contents of README.txt:
+Printing contents of README.md:
 **********************************************************************
-My CMEE Coursework Repository
-Do I like this better?
+# 2019 CMEE Coursework Yuqing Zhou
+> This repository contains the computing works for the CMEE course.
+
+## Topics
+
+### Week1
+Unix, shell scripting, version control with Git, LaTeX
+
+### Week2
+Biological Computing in Python I
+
+### Week3
+Biological computing in R; 
+Data management, exploration and visualization
+
+### Week4
+Stats with Sparrows
+
+### Week5
+Mapping and Geographic Information Systems (GIS) in R
+
+### Week6
+Genomics and Bioinformatics
+
+### Week7
+Biological Computing in Python II
+
+### Week8
+Miniproject
+
+### Week9
+High Performance Computing
+
+
 **********************************************************************
 
 ======================================================================
 Looking for the weekly directories...
 
-Found 5 weekly directories: Week1, Week2, Week3_RCoursework, Week4, Week7
+Found 8 weekly directories: Week1, Week2, Week3_RCoursework, Week4, Week5, Week6, Week7, Week9
 
 The Week7 directory will be assessed 
 
@@ -61,46 +93,66 @@ Found README in parent directory, named: README.md
 
 Printing contents of README.md:
 **********************************************************************
-profileme.py
-Illustrating profiling in Python.
+# 2019 CMEE Coursework Week7 Yuqing Zhou
+> Topics: Biological Computing in Python II
 
-profileme2.py
-Alternative approach profiling program.
+## Content
 
+### DrawFW.py
+Network analysis in Python using `networkx`.
 
-timeit.py
-Quick profiling, takes a sample of runs and returns the average.
+### LV1.py
+Plot Lotka-Volterra model, consumer-resource population dynamics.
 
-LV1.py
-Plotting Lotka-Volterra model, consumer-resource population dynamics.
+### LV2.py
+Runs the LV model with prey density dependence.    
 
-LV2.py
-Runs the LV model with prey density dependence.	
+### LV3.py
+The discrete-time version of the LV model.
 
-blackbirds.py
-Find Kingdom, Phylum and Species names in the txt.file
+### LV4.py
+A version of the discrete-time model simulation with a random gaussian fluctuation in resource's growth rate at each time-step.
 
-TestR.R
+### Nets.py
+Visualizes the QMEE CDT collaboration network.
+
+### TestR.R 
 For testing opening R from python.
 
-TestR.py
+### TestR.py
 Test to call R script from pyhton.
 
-using_os.py
+### blackbirds.py
+Find Kingdom, Phylum and Species names in the `.txt` file.
+
+### fmr.R
+Writes the list of species names to `species.csv`.
+
+### profileme.py
+Illustrates profiling in Python.
+
+### profileme2.py
+Alternative approach profiling program.
+
+### regexs.py
+Regexs in Python using `re`.
+
+### run_fmr_R.py
+Runs `fmr.R`.
+
+### timeitme.py
+Quick profiling, takes a sample of runs and returns the average.
+
+### using_os.py
 Get a list of files and directories in home directory that start with C or c.
 
-fmr.R
-Writes the list of species names to species.csv
-
-run_fmr_R.py
-Runs fmr.R.
 
 **********************************************************************
 
-Found following files in results directory: TestR.Rout, LV_model.pdf, LV2_model.pdf, DrawFW.pdf, TestR_errFile.Rout, outputFIles.Rout...
+Found following files in results directory: LV_model.pdf, LV2_model.pdf, DrawFW.pdf, README.md...
 ideally, Results directory should be empty other than, perhaps, a readme. 
 
-Found 12 code files: TestR.py, profileme2.py, timeitme.py, blackbirds.py, TestR.R, profileme.py, fmr.R, using_os.py, LV1.py, DrawFW.py, run_fmr_R.py, LV2.py
+Found 17 code files: TestR.py, regexs.py, LV3.py, profileme2.py, timeitme.py, blackbirds.py, Nets.py, TestR.R, profileme.py, LV4.py, fmr.R, using_os.py, LV1.py, DrawFW.py, Nets.R, run_fmr_R.py, LV2.py
 
 ======================================================================
 Testing script/code files...
@@ -110,6 +162,21 @@ Inspecting script file TestR.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: TestR.py
+# Desc: test to call R script from pyhton
+# Arguments: 0
+# Date: Nov 2019
+
+"""test to call R script from pyhton"""
+
+__appname__="TestR.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 import subprocess
 subprocess.Popen("Rscript --verbose TestR.R > ../results/TestR.Rout 2> ../results/TestR_errFile.Rout", shell=True).wait()
 **********************************************************************
@@ -120,10 +187,9 @@ TestR.py is a Python script file;
 
 checking for docstrings...
 
-No functions, but no script-level docstring either
-2 pts deducted
+Found no functions, but one docstring for the script, good
 
-Current Points = 98
+Current Points = 100
 
 Output (only first 500 characters): 
 
@@ -133,30 +199,268 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.12189s
+Time consumed = 0.12558s
+
+======================================================================
+Inspecting script file regexs.py...
+
+File contents are:
+**********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: regexs.py
+# Desc: regex in Python
+# Arguments: 0
+# Date: Nov 2019
+
+"""regex in Python"""
+
+__appname__="regexs.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+my_string = "a given string"
+match = re.search(r'\s', my_string)
+print(match)
+match.group()
+match = re.search(r'\d', my_string)
+print(match)
+
+MyStr = 'an example'
+match = re.search(r'\w*\s', MyStr)
+
+if match:                      
+    print('found a match:', match.group()) 
+else:
+    print('did not find a match')    
+
+match = re.search(r'2' , "it takes 2 to tango")
+match.group()
+
+match = re.search(r'\d' , "it takes 2 to tango")
+match.group()
+
+match = re.search(r'\d.*' , "it takes 2 to tango")
+match.group()
+
+match = re.search(r'\s\w{1,3}\s', 'once upon a time')
+match.group()
+
+match = re.search(r'\s\w*$', 'once upon a time')
+match.group()
+
+re.search(r'\w*\s\d.*\d', 'take 2 grams of H2O').group()
+
+re.search(r'^\w*.*\s', 'once upon a time').group() # 'once upon a '
+
+re.search(r'^\w*.*?\s', 'once upon a time').group()
+
+re.search(r'<.+>', 'This is a <EM>first</EM> test').group()
+
+re.search(r'<.+?>', 'This is a <EM>first</EM> test').group()
+
+re.search(r'\d*\.?\d*','1432.75+60.22i').group()
+
+re.search(r'[AGTC]+', 'the sequence ATTCGT').group()
+
+re.search(r'\s+[A-Z]\w+\s*\w+', "The bird-shit frog's name is Theloderma asper.").group()**********************************************************************
+
+Testing regexs.py...
+
+regexs.py is a Python script file;
+
+checking for docstrings...
+
+Found no functions, but one docstring for the script, good
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error (or warning):
+Traceback (most recent call last):
+  File "regexs.py", line 17, in <module>
+    match = re.search(r'\s', my_string)
+NameError: name 're' is not defined
+
+======================================================================
+Inspecting script file LV3.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: LV3.py
+# Desc: the discrete-time version of the LV model
+# Arguments: 0
+# Date: Nov 2019
+
+"""the discrete-time version of the LV model"""
+
+__appname__="LV3.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+# plotting Lotka-Volterra model figures.
+
+# Solving LV model using numerica intergarion
+import sys
+import scipy as sc
+import scipy.integrate as integrate
+import numpy as np
+
+#define a function that returns the growth rate of consumer and resource population at any given time step
+def dCR_dt(pops, t=0):
+    """returns the growth rate of consumer and resource population at any given time step"""
+    R = pops[0]
+    C = pops[1]
+    R1 = R * (1 + r * (1 - R/K) - a * C)
+    C1 = C * (1 - z + e * a * R)
+
+    return sc.array([R1, C1])
+
+# Assign parameter values
+
+if len(sys.argv) != 5:
+    r = 1.
+    a = 0.1
+    z = 1.5
+    e = 0.75
+else:
+    r = float(sys.argv[1])
+    a = float(sys.argv[2])
+    z = float(sys.argv[3])
+    e = float(sys.argv[4])
+K = 35
+
+    
+# Integrate from time point 0 to 15, using 1000 sub-divisions of time.
+t = sc.linspace(0,15,1000)
+
+# Set the initial condition for the 2 populations(10 resources and 5 consumers per unit area), and convert the two into an array.
+pops = np.zeros(shape = ((len(t)),2))
+pops[0,:] = [10,5]
+for i in range(1,len(t)):
+    pops[i,:] = dCR_dt(pops[(i-1),:], t[i])
+    if pops[i,0] > K:
+        pops[i,0] = K
+    elif pops[i,0] < 0:
+        pops[i,0] = 0
+    if pops[i,1] > K:
+        pops[i,1] = K
+    elif pops[i,1] < 0:
+        pops[i,1] = 0 
+
+# R0 = 10
+# C0 = 5
+# RC0 = sc.array([R0, C0])
+
+# Numerically integrate this system forward from those starting conditions:
+# pops, infodict = integrate.odeint(dCR_dt, RC0, t, full_output=True)
+
+
+# Plotting
+import matplotlib.pylab as p
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+
+with PdfPages('../results/LV3_model.pdf') as pdf:
+    # LV_model_pdf = r'../results/LV_model.pdf'
+    f1 = p.figure() # open an empty figure object.
+    p.plot(t, pops[:,0], 'g-', label = 'Resource density')
+    p.plot(t, pops[:,1], 'b-', label = 'Consumer density')
+    p.grid()
+    p.legend(loc='best')
+    p.xlabel('Time')
+    p.ylabel('Population density')
+    p.title('Consumer-Resource population dynamics')
+
+
+# f1.savefig('../results/LV_model.pdf') # Save figure
+    pdf.savefig(f1)
+
+    f2 = p.figure() # open an empty figure object.
+
+    p.plot(pops[:,0], pops[:,1], 'r-')
+    p.grid()
+    p.xlabel('Resource density')
+    p.ylabel('Consumer density')
+    p.title('Consumer-Resource population dynamics\n r = %s, a = %s, z = %s, e = %s, K = %s' %(r, a, z, e, K))
+   
+
+    pdf.savefig(f2)
+
+**********************************************************************
+
+Testing LV3.py...
+
+LV3.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.79286s
 
 ======================================================================
 Inspecting script file profileme2.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: profileme2.py
+# Desc: better profileme
+# Arguments: 0
+# Date: Nov 2019
+
+"""better profileme"""
+
+__appname__="profileme2.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 def my_squares(iters):
+    """better square"""
     out = [i ** 2 for i in range(iters)]
     return out
 
 def my_join(iters, string):
+    """better join"""
     out = ''
     for i in range(iters):
         out += "," + string
     return out
 
 def run_my_funcs(x,y):
+    """better run func"""
     print(x,y)
     my_squares(x)
     my_join(x,y)
     return 0
 
-run_my_funcs(10000000,"My string")**********************************************************************
+run_my_funcs(10000000,"My string")
+**********************************************************************
 
 Testing profileme2.py...
 
@@ -164,10 +468,9 @@ profileme2.py is a Python script file;
 
 checking for docstrings...
 
-Found one or more functions, but completely missing docstrings
-2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+Found one or more docstrings and functions
 
-Current Points = 94.5
+Current Points = 100
 
 Output (only first 500 characters): 
 
@@ -178,13 +481,27 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 3.64874s
+Time consumed = 3.65709s
 
 ======================================================================
 Inspecting script file timeitme.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: timeitme.py
+# Desc: quick profiling, takes a sample of runs and returns the average
+# Arguments: 0
+# Date: Nov 2019
+
+"""quick profiling, takes a sample of runs and returns the average"""
+
+__appname__="timeitme.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
 ##############################################################################
 # loops vs. list comprehensions: which is faster?
 ##############################################################################
@@ -221,10 +538,9 @@ timeitme.py is a Python script file;
 
 checking for docstrings...
 
-No functions, but no script-level docstring either
-2 pts deducted
+Found no functions, but one docstring for the script, good
 
-Current Points = 92.5
+Current Points = 100
 
 Output (only first 500 characters): 
 
@@ -236,13 +552,28 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 9.95954s
+Time consumed = 9.94978s
 
 ======================================================================
 Inspecting script file blackbirds.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: blackbirds.py
+# Desc: find Kingdom, Phylum and Species names in the `.txt` file
+# Arguments: 0
+# Date: Nov 2019
+
+"""find Kingdom, Phylum and Species names in the `.txt` file"""
+
+__appname__="blackbirds.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 import re
 
 # Read the file (using a different, more python 3 way, just for fun!)
@@ -269,7 +600,8 @@ print(found_matches)
 
 # Hint: you may want to use re.findall(my_reg, text)... Keep in mind that there
 # are multiple ways to skin this cat! Your solution could involve multiple
-# regular expression calls (easier!), or a single one (harder!)**********************************************************************
+# regular expression calls (easier!), or a single one (harder!)
+**********************************************************************
 
 Testing blackbirds.py...
 
@@ -277,10 +609,9 @@ blackbirds.py is a Python script file;
 
 checking for docstrings...
 
-No functions, but no script-level docstring either
-2 pts deducted
+Found no functions, but one docstring for the script, good
 
-Current Points = 90.5
+Current Points = 100
 
 Output (only first 500 characters): 
 
@@ -291,14 +622,140 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.02921s
+Time consumed = 0.03016s
+
+======================================================================
+Inspecting script file Nets.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: Nets.py
+# Desc: visualizes the QMEE CDT collaboration network
+# Arguments: 0
+# Date: Nov 2019
+"""visualizes the QMEE CDT collaboration network"""
+
+__appname__="Nets.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+
+# import package
+import matplotlib.pyplot as plt
+import networkx as nx 
+import csv
+import pandas as pd
+import scipy as sc
+from matplotlib.lines import Line2D
+
+# load data
+links=pd.read_csv('../data/QMEE_Net_Mat_edges.csv')
+nodes=pd.read_csv('../data/QMEE_Net_Mat_nodes.csv')
+ndn=list(nodes.id)
+# links=sc.matrix(links)
+#Create graph object
+G=nx.Graph()
+
+# link 
+lklist = []
+for i in range(len(links)):
+    for j in range((i+1),len(links)):
+        if links.iloc[i][j] > 0:
+            lklist.append((links.columns[i],links.columns[j],links.iloc[i][j]))
+    
+
+# nodes
+# Generate colors based on partner type:
+colrs = []
+for i in nodes.Type:
+    if i == "University":
+        colrs.append("blue")
+    elif i =="Hosting Partner":
+        colrs.append("green")
+    else: colrs.append("red")
+
+
+# Set node size based on Number of PIs:
+# V(net)$size <- V(net)$Pis*0.9
+
+# V(net)$size <- 50
+
+# Set edge width based on weight (PhD Students):
+# E(net)$width <- E(net)$weight
+
+#change arrow size and edge color:
+# E(net)$arrow.size <- 1
+# E(net)$edge.color <- "gray80"
+
+# E(net)$width <- 1+E(net)$weight/10
+edgewidth = [1+i[2]/10 for i in lklist]
+
+G.add_nodes_from(ndn)
+G.add_weighted_edges_from(tuple(lklist))
+G1=nx.circular_layout(ndn)
+# plotting
+f=plt.figure(figsize=(6,6))
+pos = nx.spring_layout(G)
+
+nx.draw_networkx(G,pos=pos,node_size=2100,node_color=colrs, 
+                edge_color="grey",width=edgewidth,with_labels=True)
+plt.legend(("University","Hosting Partner", "Non-hosting Partner"),loc='best',scatterpoints=1, ncol=1,fontsize=8)
+plt.axis('off')
+f.savefig("../results/QMEENet_yz2919.svg")
+
+# plot(net, edge.curved=0, vertex.label.color="black") 
+
+# legend(x=-1.5, y=-0.1, c("University","Hosting Partner", "Non-hosting Partner"), pch=21,
+    #    col="#777777", pt.bg=colrs, pt.cex=2, cex=.8, bty="n", ncol=1)
+# nx.draw_networkx_labels(G, pos=nx.spring_layout(G), labels=("University","Hosting Partner", "Non-hosting Partner"))
+# dev.off()
+
+
+**********************************************************************
+
+Testing Nets.py...
+
+Nets.py is a Python script file;
+
+checking for docstrings...
+
+Found no functions, but one docstring for the script, good
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error (or warning):
+/usr/lib/python3/dist-packages/networkx/drawing/nx_pylab.py:522: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  if not cb.is_string_like(edge_color) \
+/usr/lib/python3/dist-packages/networkx/drawing/nx_pylab.py:543: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  if cb.is_string_like(edge_color) or len(edge_color) == 1:
+/usr/lib/python3/dist-packages/networkx/drawing/nx_pylab.py:724: MatplotlibDeprecationWarning: The is_string_like function was deprecated in version 2.1.
+  if not cb.is_string_like(label):
 
 ======================================================================
 Inspecting script file TestR.R...
 
 File contents are:
 **********************************************************************
-print("Hello, this is R!")**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: TestR.R
+# Desc: For testing opening R from python
+# Arguments: 0
+# Date: Nov 2019
+
+print("Hello, this is R!")
+**********************************************************************
 
 Testing TestR.R...
 
@@ -311,32 +768,52 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.09781s
+Time consumed = 0.09640s
 
 ======================================================================
 Inspecting script file profileme.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: profileme.py
+# Desc: illustrates profiling in Python
+# Arguments: 0
+# Date: Nov 2019
+
+"""illustrates profiling in Python"""
+
+__appname__="profileme.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+
 def my_squares(iters):
+    """square loop"""
     out = []
     for i in range(iters):
         out.append(i ** 2)
     return out
 
 def my_join(iters, string):
+    """join strings"""
     out = ''
     for i in range(iters):
         out += string.join(", ")
     return out
     
 def run_my_funcs(x,y):
+    """results of my_squares and my_join"""
     print(x,y)
     my_squares(x)
     my_join(x,y)
     return 0
 
-run_my_funcs(10000000, "My string")**********************************************************************
+run_my_funcs(10000000, "My string")
+**********************************************************************
 
 Testing profileme.py...
 
@@ -344,10 +821,9 @@ profileme.py is a Python script file;
 
 checking for docstrings...
 
-Found one or more functions, but completely missing docstrings
-2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+Found one or more docstrings and functions
 
-Current Points = 87.0
+Current Points = 100
 
 Output (only first 500 characters): 
 
@@ -358,14 +834,158 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 6.68257s
+Time consumed = 6.84268s
+
+======================================================================
+Inspecting script file LV4.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: LV4.py
+# Desc: a version of the discrete-time model simulation 
+#       with a random gaussian fluctuation in resource's growth rate at each time-step
+# Arguments: 0
+# Date: Dec 2019
+
+"""a version of the discrete-time model simulation 
+    with a random gaussian fluctuation in resource's growth rate at each time-step"""
+
+__appname__="LV4.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+# plotting Lotka-Volterra model figures.
+
+# Solving LV model using numerica intergarion
+import sys
+import scipy as sc
+import scipy.integrate as integrate
+import scipy.stats as stats
+import numpy as np
+
+#define a function that returns the growth rate of consumer and resource population at any given time step
+def dCR_dt(pops, t=0):
+    """returns the growth rate of consumer and resource population at any given time step"""
+    R = pops[0]
+    C = pops[1]
+    ϵ = float(stats.norm.rvs(size = 1))
+    R1 = R * (1 + (r + ϵ) * (1 - R/K) - a * C)
+    C1 = C * (1 - z + e * a * R)
+
+    return sc.array([R1, C1])
+
+# Assign parameter values
+
+if len(sys.argv) != 5:
+    r = 1.
+    a = 0.1
+    z = 1.5
+    e = 0.75
+else:
+    r = float(sys.argv[1])
+    a = float(sys.argv[2])
+    z = float(sys.argv[3])
+    e = float(sys.argv[4])
+K = 35
+
+    
+# Integrate from time point 0 to 15, using 1000 sub-divisions of time.
+t = sc.linspace(0,15,1000)
+
+# Set the initial condition for the 2 populations(10 resources and 5 consumers per unit area), and convert the two into an array.
+pops = np.zeros(shape = ((len(t)),2))
+pops[0,:] = [10,5]
+for i in range(1,len(t)):
+    pops[i,:] = dCR_dt(pops[(i-1),:], t[i])
+    if pops[i,0] > K:
+        pops[i,0] = K
+    elif pops[i,0] < 0:
+        pops[i,0] = 0
+    if pops[i,1] > K:
+        pops[i,1] = K
+    elif pops[i,1] < 0:
+        pops[i,1] = 0 
+
+# R0 = 10
+# C0 = 5
+# RC0 = sc.array([R0, C0])
+
+# Numerically integrate this system forward from those starting conditions:
+# pops, infodict = integrate.odeint(dCR_dt, RC0, t, full_output=True)
+
+
+# Plotting
+import matplotlib.pylab as p
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+
+with PdfPages('../results/LV4_model.pdf') as pdf:
+    # LV_model_pdf = r'../results/LV_model.pdf'
+    f1 = p.figure() # open an empty figure object.
+    p.plot(t, pops[:,0], 'g-', label = 'Resource density')
+    p.plot(t, pops[:,1], 'b-', label = 'Consumer density')
+    p.grid()
+    p.legend(loc='best')
+    p.xlabel('Time')
+    p.ylabel('Population density')
+    p.title('Consumer-Resource population dynamics')
+
+
+# f1.savefig('../results/LV_model.pdf') # Save figure
+    pdf.savefig(f1)
+
+    f2 = p.figure() # open an empty figure object.
+
+    p.plot(pops[:,0], pops[:,1], 'r-')
+    p.grid()
+    p.xlabel('Resource density')
+    p.ylabel('Consumer density')
+    p.title('Consumer-Resource population dynamics\n r = %s, a = %s, z = %s, e = %s, K = %s' %(r, a, z, e, K))
+   
+
+    pdf.savefig(f2)
+
+**********************************************************************
+
+Testing LV4.py...
+
+LV4.py is a Python script file;
+
+checking for docstrings...
+
+Found one or more docstrings and functions
+
+Current Points = 100
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 1.01465s
 
 ======================================================================
 Inspecting script file fmr.R...
 
 File contents are:
 **********************************************************************
-# Plots log(field metabolic rate) against log(body mass) for the Nagy et al 
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: fmr.R
+# Desc: writes the list of species names to `species.csv`
+# Arguments: 0
+# Date: Nov 2019
+
+
+# Plots log(field metabolic rate) against log(body mass) for the Nagy et al
 # 1999 dataset to a file fmr.pdf.
 # Writes the list of species names to species.csv
 
@@ -409,6 +1029,21 @@ Inspecting script file using_os.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: using_os.py
+# Desc: get a list of files and directories in home directory that start with C or c
+# Arguments: 0
+# Date: Nov 2019
+
+"""get a list of files and directories in home directory that start with C or c"""
+
+__appname__="using_os.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
 """ This is blah blah"""
 
 # Use the subprocess.os module to get a list of files and  directories 
@@ -454,7 +1089,8 @@ for (dir, subdir, files) in subprocess.os.walk(home):
 # Type your code here:
     DirsStartingWithC.extend(re.findall(r'/[Cc]\w+/',str(dir)))
     DirsStartingWithC.extend(re.findall(r'[Cc]\w+', str(subdir)))
-    print(DirsStartingWithC)**********************************************************************
+    print(DirsStartingWithC)
+**********************************************************************
 
 Testing using_os.py...
 
@@ -462,9 +1098,10 @@ using_os.py is a Python script file;
 
 checking for docstrings...
 
-Found no functions, but one docstring for the script, good
+No functions, but no script-level docstring either
+2 pts deducted
 
-Current Points = 87.0
+Current Points = 98
 
 Output (only first 500 characters): 
 
@@ -477,14 +1114,29 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 10.59937s
+Time consumed = 10.61492s
 
 ======================================================================
 Inspecting script file LV1.py...
 
 File contents are:
 **********************************************************************
-# plotting Lotka-Volterra model figures.
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: LV1.py
+# Desc: plotting Lotka-Volterra model figures
+# Arguments: 0
+# Date: Nov 2019
+
+"""plotting Lotka-Volterra model figures"""
+
+__appname__="LV1.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+
 
 # Solving LV model using numerica intergarion
 import scipy as sc
@@ -492,7 +1144,7 @@ import scipy.integrate as integrate
 
 #define a function that returns the growth rate of consumer and resource population at any given time step
 def dCR_dt(pops, t=0):
-
+    """returns the growth rate of consumer and resource population at any given time step"""
     R = pops[0]
     C = pops[1]
     dRdt = r * R - a * R * C
@@ -556,10 +1208,9 @@ LV1.py is a Python script file;
 
 checking for docstrings...
 
-Found one or more functions, but completely missing docstrings
-2 pts deducted for missing docstring for script, and .5 pt deducted per missing docstring for function
+Found one or more docstrings and functions
 
-Current Points = 84.5
+Current Points = 98
 
 Output (only first 500 characters): 
 
@@ -569,20 +1220,36 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 1.45063s
+Time consumed = 1.10880s
 
 ======================================================================
 Inspecting script file DrawFW.py...
 
 File contents are:
 **********************************************************************
+#!/bin/env python3
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: DrawFW.py
+# Desc: network analysis in Python
+# Arguments: 0
+# Date: Nov 2019
+
+"""network analysis in Python"""
+
+__appname__="DrawFW.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
+
+
 import networkx as nx
 import scipy as sc
 import numpy
 import matplotlib.pyplot as p
 
 def GenRdmAdjList(N = 2, C = 0.5): 
-    """ 
+    """ generate random list
     """ 
     Ids = range(N) 
     ALst = [] 
@@ -619,7 +1286,8 @@ NodSizs = 1000 * (Sizs - min(Sizs))/(max(Sizs)-min(Sizs))
 # Render the graph
 # colormap = plt.get_cmap('BuGn')
 nx.draw_networkx(G, pos, node_size = NodSizs, node_color = 'r')
-f.savefig('../results/DrawFW.pdf')**********************************************************************
+f.savefig('../results/DrawFW.pdf')
+**********************************************************************
 
 Testing DrawFW.py...
 
@@ -629,9 +1297,7 @@ checking for docstrings...
 
 Found one or more docstrings and functions
 
-Missing docstring, either in one or functions and/or at the script level
-
-Current Points = 84.0
+Current Points = 98
 
 Output (only first 500 characters): 
 
@@ -648,11 +1314,116 @@ Encountered error (or warning):
   if not cb.is_string_like(label):
 
 ======================================================================
+Inspecting script file Nets.R...
+
+File contents are:
+**********************************************************************
+library(igraph) # Load the igraph package
+
+rm(list = ls())
+
+# 	ICL	UoR	CEH	ZSL	CEFAS	Nonacademic/CASE
+# ICL	0	0	10	9	5	70
+# UoR		0	12	0	2	76
+# CEH			0	0	0	6
+# ZSL				0# plot(net, edge.arrow.size=1, edge.curved=.1,
+#      vertex.color="orange", vertex.frame.color="#555555",
+#      vertex.label=V(net)$Type, vertex.label.color="black",
+#      vertex.label.cex=.7) 	0	28
+# CEFAS					0	0
+# Nonacademic/CASE						0
+
+links <- read.csv("../Data/QMEE_Net_Mat_edges.csv", header=T, as.is=T)
+nodes <- read.csv("../Data/QMEE_Net_Mat_nodes.csv", header=T, row.names = 1)
+
+#Create graph object
+net <- graph.adjacency(as.matrix(links), mode = "directed", weighted=TRUE, diag=F)
+        
+#Test plot
+
+plot(net, edge.arrow.size=1, edge.curved=.1,
+      vertex.color="orange", vertex.frame.color="#555555",
+      vertex.label=V(net)$Type, vertex.label.color="black",
+      vertex.label.cex=.7) 
+
+# Generate colors based on partner type:
+colrs <- c("green", "red", "blue")
+V(net)$color <- colrs[nodes$Type]
+
+# Set node size based on Number of PIs:
+# V(net)$size <- V(net)$Pis*0.9
+
+V(net)$size <- 50
+
+# Set edge width based on weight (PhD Students):
+E(net)$width <- E(net)$weight
+
+#change arrow size and edge color:
+E(net)$arrow.size <- 1
+E(net)$edge.color <- "gray80"
+
+E(net)$width <- 1+E(net)$weight/10
+
+graphics.off()
+
+svg("../Results/QMEENet.svg",width=7,height=7)
+
+plot(net, edge.curved=0, vertex.label.color="black") 
+
+legend(x=-1.5, y=-0.1, c("University","Hosting Partner", "Non-hosting Partner"), pch=21,
+       col="#777777", pt.bg=colrs, pt.cex=2, cex=.8, bty="n", ncol=1)
+
+dev.off()
+**********************************************************************
+
+Testing Nets.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Encountered error (or warning):
+Loading required package: methods
+
+Attaching package: ‘igraph’
+
+The following objects are masked from ‘package:stats’:
+
+    decompose, spectrum
+
+The following object is masked from ‘package:base’:
+
+    union
+
+Error in file(file, "rt") : cannot open the connection
+Calls: read.csv -> read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file '../Data/QMEE_Net_Mat_edges.csv': No such file or directory
+Execution halted
+
+======================================================================
 Inspecting script file run_fmr_R.py...
 
 File contents are:
 **********************************************************************
 # /usr/bin/env python
+
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: run_fmr_R.py
+# Desc: runs `fmr.R`
+# Arguments: 0
+# Date: Nov 2019
+
+"""runs `fmr.R`"""
+
+__appname__="profileme.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
 """Running fmr.R from python"""
 
 
@@ -676,9 +1447,10 @@ run_fmr_R.py is a Python script file;
 
 checking for docstrings...
 
-Found no functions, but one docstring for the script, good
+No functions, but no script-level docstring either
+2 pts deducted
 
-Current Points = 84.0
+Current Points = 96
 
 Output (only first 500 characters): 
 
@@ -702,6 +1474,18 @@ File contents are:
 **********************************************************************
 #!/usr/bin/env python3
 
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: LV2.py
+# Desc: runs the LV model with prey density dependence
+# Arguments: 0
+# Date: Nov 2019
+
+"""Runs the LV model with prey density dependence"""
+
+__appname__="LV1.py"
+__author__="Yuqing Zhou"
+__version__="0.0.1"
+__license__="None"
 """......"""
 # plotting Lotka-Volterra model figures.
 
@@ -712,7 +1496,7 @@ import scipy.integrate as integrate
 
 #define a function that returns the growth rate of consumer and resource population at any given time step
 def dCR_dt(pops, t=0):
-
+    """returns the growth rate of consumer and resource population at any given time step"""
     R = pops[0]
     C = pops[1]
     dRdt = r * R * (1 - R/K) - a * R * C
@@ -788,9 +1572,7 @@ checking for docstrings...
 
 Found one or more docstrings and functions
 
-Missing docstring, either in one or functions and/or at the script level
-
-Current Points = 83.5
+Current Points = 96
 
 Output (only first 500 characters): 
 
@@ -800,19 +1582,19 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.77929s
+Time consumed = 0.83737s
 
 ======================================================================
 ======================================================================
 Finished running scripts
 
-Ran into 3 errors
+Ran into 6 errors
 
 ======================================================================
 ======================================================================
 
 FINISHED WEEKLY ASSESSMENT
 
-Current Points for the Week = 83.5
+Current Points for the Week = 96
 
 NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!

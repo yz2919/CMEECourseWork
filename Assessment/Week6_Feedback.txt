@@ -1,0 +1,681 @@
+Starting weekly assessment for Yuqing, Week6
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 91.87 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Week6, Week1, Week7, Assessment, Week5, Week2, Week3_RCoursework, Week9, Week4, .git, Project
+
+Found the following files in parent directory: .gitignore, README.md
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+*~ 
+*.tmp
+*.pdf
+*.pyc
+**********************************************************************
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+**********************************************************************
+# 2019 CMEE Coursework Yuqing Zhou
+> This repository contains the computing works for the CMEE course.
+
+## Topics
+
+### Week1
+Unix, shell scripting, version control with Git, LaTeX
+
+### Week2
+Biological Computing in Python I
+
+### Week3
+Biological computing in R; 
+Data management, exploration and visualization
+
+### Week4
+Stats with Sparrows
+
+### Week5
+Mapping and Geographic Information Systems (GIS) in R
+
+### Week6
+Genomics and Bioinformatics
+
+### Week7
+Biological Computing in Python II
+
+### Week8
+Miniproject
+
+### Week9
+High Performance Computing
+
+
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 8 weekly directories: Week1, Week2, Week3_RCoursework, Week4, Week5, Week6, Week7, Week9
+
+The Week6 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK6...
+
+Found the following directories: code, data, results
+
+Found the following files: README.md
+
+Checking for readme file in weekly directory...
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+**********************************************************************
+# 2019 CMEE Coursework Week6 Yuqing Zhou
+> Topics: Genomics and bioinformatics
+
+## Content
+
+### 01_Alleles.R
+Calculate several quantities of population genetics from `bears.csv`.
+
+### 02_Divergence.R
+Obtain an estimate of the divergence time bent-toed and western banded geckos. 
+
+### 03_Coalescence.R
+Estimates the effective population size, calculate and plot the site frequency spectrum for whale population.
+
+### 04_Demography.R
+Practical on population subdivision and demographic inferences: inferring the history of a population of sea turtles.
+
+## Reference
+
+[https://bitbucket.org/mfumagal/genomics_and_bioinformatics/src/master/]
+**********************************************************************
+
+Found following files in results directory: README.md...
+
+Found 4 code files: 01_Alleles.R, 03_Coalescence.R, 04_Demography.R, 02_Divergence.R
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file 01_Alleles.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: 01_Alleles.R
+# Desc: calculate several quantities of population genetics from `bears.csv`
+# Arguments: 0
+# Date: Nov 2019
+
+# SNP
+bears <- read.csv("../data/bears.csv", header = FALSE, stringsAsFactors= FALSE, colClasses= rep("character", 10000))
+# Identify SNPs position.
+SNPs <- c()
+for (i in 1:ncol(bears)) {
+  if (length(unique(bears[,i])) == 2)
+    SNPs <- c(SNPs,i)
+}
+SNPs
+
+# calculate, print and visualise allele frequencies
+bears <- bears[, SNPs]
+colnames(bears) = SNPs 
+Freqbears <- c()
+ncol(bears)
+for (i in 1:ncol(bears)){
+  alleles <- sort(unique(bears[,i]))
+  cat("\nSNPs",i, "alleles", alleles)
+  freq <- length(which(bears[,i]==alleles[2])/nrow(bears))
+  cat("allele frequency",freq)
+  Freqbears <- c(Freqbears, freq)
+} 
+hist(Freqbears, breaks = 15)
+
+# calculate and print genotype frequencies
+Freqbears <<- NULL
+for (i in 1:nrow(bears)){
+  genotype = c(bears[i,], bears[i+1,])
+}
+  alleles2 = as.data.frame(table(alleles))
+  alleles4=cbind(alleles2,alleles2[,2]/sum(alleles2[,2]))
+  output=cbind(i, bears[i], alleles4)
+  Freqbears <<- rbind(Freqbears,output)
+
+colnames(Freqbears) <- c("Number", "Locus","allele","count","frequency")
+Allelefreqs=Freqbears[,-1]
+write.table(Allelefreqs,file="../results/Allelefrequencies.txt",row.names=FALSE,col.names=TRUE,sep="\t",append=FALSE)
+
+######
+# calculate and print homozygosity and heterozygosity
+### reuse the previous code and easily calculate the heterozygosity
+nsamples <- 20
+for (i in 1:ncol(bears)) {
+  ### alleles in this SNPs
+  alleles <- sort(unique(bears[,i]))
+  cat("\nSNP", i, "with alleles", alleles)
+  ### choose one allele as "reference"
+  ### genotypes are Allele1/Allele1 Allele1/Allele2 Allele2/Allele2
+  genotype_counts <- c(0, 0, 0)
+  for (j in 1:nsamples) {
+    ### indexes of genotypes for individual j
+    genotype_index <- c( (j*2)-1, (j*2) )
+    ### count the Allele2 instances
+    genotype <- length(which(bears[genotype_index, i]==alleles[2])) + 1
+    ### increase the counter for the corresponding genotype
+    genotype_counts[genotype] <- genotype_counts[genotype] + 1
+  }
+  cat(" and heterozygosity", genotype_counts[2]/nsamples, "and homozygosity", 1-genotype_counts[2]/nsamples)
+}
+# test for HWE, with calculating of expected genotype counts
+
+nonHWE <- c() # to store indexes of SNPs deviating from HWE
+nsamples <- 20
+for (i in 1:ncol(bears)) {
+  
+  ### alleles in this SNPs
+  alleles <- sort(unique(bears[,i]))
+  cat("\nSNP", i)
+  
+  ### "reference"
+  freq <- length(which(bears[,i]==alleles[2])) / nrow(bears)
+  
+  ### calculate the expected genotype counts under HWE
+  genotype_counts_expected <- c( (1-freq)^2, 2*freq*(1-freq), freq^2) * nsamples
+  
+  ### genotypes are Allele1/Allele1 Allele1/Allele2 Allele2/Allele2
+  genotype_counts <- c(0, 0, 0)
+  
+  for (j in 1:nsamples) {
+    ### indexes of genotypes for individual j
+    genotype_index <- c( (j*2)-1, (j*2) )
+    ### count the Allele2 instances
+    genotype <- length(which(bears[genotype_index, i]==alleles[2])) + 1
+    ### increase the counter for the corresponding genotype
+    genotype_counts[genotype] <- genotype_counts[genotype] + 1
+  }
+  
+  ### test for HWE: calculate chi^2 statistic
+  chi <- sum( (genotype_counts_expected - genotype_counts)^2 / genotype_counts_expected )
+  
+  ## pvalue
+  pv <- 1 - pchisq(chi, df=1)
+  cat("with pvalue for test against HWE", pv)
+  
+  ## retain SNPs with pvalue<0.05
+  if (pv < 0.05) nonHWE <- c(nonHWE, i)
+  
+}
+
+
+## 6) calculate, print  and visualise inbreeding coefficients for SNPs deviating from HWE
+
+### assuming we ran the code for point 5, we already have the SNPs deviating
+F <- c()
+nsamples <- 20
+for (i in nonHWE) {
+
+        ### alleles in this SNPs
+        alleles <- sort(unique(bears[,i]))
+        cat("\nSNP", i)
+
+        ### as before, I can choose one allele as "reference"
+        ### frequency (of the second allele)
+        freq <- length(which(bears[,i]==alleles[2])) / nrow(bears)
+
+        ### from the frequency, I can calculate the expected genotype counts under HWE
+        genotype_counts_expected <- c( (1-freq)^2, 2*freq*(1-freq), freq^2) * nsamples
+
+        ### genotypes are Allele1/Allele1 Allele1/Allele2 Allele2/Allele2
+        genotype_counts <- c(0, 0, 0)
+
+        for (j in 1:nsamples) {
+                ### indexes of genotypes for individual j
+                genotype_index <- c( (j*2)-1, (j*2) )
+                ### count the Allele2 instances
+                genotype <- length(which(bears[genotype_index, i]==alleles[2])) + 1
+                ### increase the counter for the corresponding genotype
+                genotype_counts[genotype] <- genotype_counts[genotype] + 1
+        }
+
+    ### calculate inbreeding coefficient
+    inbreeding <- ( 2*freq*(1-freq) - (genotype_counts[2]/nsamples) ) / ( 2*freq*(1-freq) )
+    F <- c(F, inbreeding)
+    cat(" with inbreeding coefficient", inbreeding)
+}
+### plot
+hist(F)
+plot(F, type="h")
+**********************************************************************
+
+Testing 01_Alleles.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+  [1]   30   40  262  284  290  306  460  655  727  822  899 1020 1027 1084 1142
+ [16] 1198 1267 1406 1439 1723 1852 1933 1978 2050 2068 2108 2241 2313 2341 2348
+ [31] 2505 2618 2633 2657 2801 2899 3028 3174 3210 3216 3225 3413 3520 3584 3660
+ [46] 3683 3949 4206 4233 4295 4332 4353 4412 4427 4475 4648 4706 4720 4886 4890
+ [61] 4918 4933 4994 5195 5467 5600 5659 5754 5812 5892 5906 6307 6494 6742 6748
+ [76] 6851 6856 6905 6998 7054 7175 7232 7321 7384 7570 7584 7612 7708 8063 8091
+ [91] 8658 8906
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.99714s
+
+======================================================================
+Inspecting script file 03_Coalescence.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: 03_Coalescence.R
+# Desc: estimate the effective population size, calculate and plot the site frequency spectrum for whale population
+# Arguments: 0
+# Date: Nov 2019
+
+whalesN <- read.csv("../data/killer_whale_North.csv", header = FALSE, stringsAsFactors= FALSE, colClasses= rep("numeric", 50000))
+whalesS <- read.csv("../data/killer_whale_South.csv", header = FALSE, stringsAsFactors= FALSE, colClasses= rep("numeric", 50000))
+whalesN <- as.matrix(whalesN)
+whalesS <- as.matrix(whalesS)
+#Tajima
+n <- nrow(whalesN)
+pi_N=0
+for (i in 1:(n-1)) {
+  for (j in (i+1):n) {
+    pi_N = pi_N + sum(abs(whalesN[i,]-whalesN[j,]))
+  }
+}
+pi_N <- pi_N/(n*(n-1)/2)
+
+n <- nrow(whalesS)
+pi_S=0
+for (i in 1:(n-1)) {
+  for (j in (i+1):n) {
+    pi_S = pi_S + sum(abs(whalesS[i,]-whalesS[j,]))
+  }
+}
+pi_S <- pi_S/(n*(n-1)/2)
+
+#Tajima effective population size
+NeT_north =  pi_N/(4*(10^(-8)))
+NeT_south =  pi_S/(4*(10^(-8)))
+#Watterson's north
+SNPn = 0
+for (i in 1:ncol(whalesN)){
+  if (length(unique(whalesN[,i])) != 1 )
+    SNPn <- SNPn + 1
+}
+sumN = 0
+for (i in 1:(nrow(whalesN)-1)){
+ sumN = sumN + sum(1/i)
+}
+Wn <- SNPn/sumN
+#Watterson's south
+SNPs = 0
+for (i in 1:ncol(whalesS)){
+  if (length(unique(whalesS[,i])) != 1 )
+    SNPs <- SNPs + 1
+}
+sumS = 0
+for (i in 1:(nrow(whalesS)-1)){
+  sumS = sumS + sum(1/i)
+}
+Ws <- SNPs/sumS
+#Watterson effective population size
+NeW_north =  Wn/(4*10^(-8))
+NeW_south =  Ws/(4*10^(-8))
+
+
+
+# #SFS
+# freq = 0
+# SFS <- c()
+# lapply(whalesN[,i], table))
+# for (i in 1:ncol(whalesN)) {
+#   freq = sum(whalesN[,i]==1)
+#   SFS <- c(SFS, freq)
+# }
+
+# apply(array, margin, ...)
+
+# for (i in 1:ncol(whalesN)) {
+#   if (i == 1)
+#     freq = sum(whalesN[,i])/nrow(whalesN)
+#   SFS <- c(SFS, freq)
+# }
+# freq
+# hist(SFS)
+# hist(whalesN[,i],prob=T,xlab='sth',main='STH',ylim=0:1,freq,breaks=seq(0,550,2))
+
+
+# #Mutation rate per site need to multiple by length. the more the bases, the more the mutation might accumulate.
+
+
+
+
+
+### North population
+sfs_N <- rep(0, n-1)
+### allele frequencies
+derived_freqs <- apply(X=whalesN, MAR=2, FUN=sum)
+### the easiest (but slowest) thing to do would be to loop over all possible allele frequencies and count the occurrences
+for (i in 1:length(sfs_N)) sfs_N[i] <- length(which(derived_freqs==i))
+
+### South population
+sfs_S <- rep(0, n-1)
+### allele frequencies
+derived_freqs <- apply(X=whalesS, MAR=2, FUN=sum)
+### the easiest (but slowest) thing to do would be to loop over all possible allele frequencies and count the occurrences
+for (i in 1:length(sfs_S)) sfs_S[i] <- length(which(derived_freqs==i))
+
+### plot
+barplot(t(cbind(sfs_N, sfs_S)), beside=T, names.arg=seq(1,nrow(whalesS)-1,1), legend=c("North", "South"))
+
+cat("\nThe population with the greater population size has a higher proportion of singletons, as expected.")
+
+### bonus: joint site frequency spectrum
+
+sfs <- matrix(0, nrow=nrow(whalesN)+1, ncol=nrow(whalesS)+1)
+for (i in 1:ncol(whalesN)) {
+
+	freq_N <- sum(whalesN[,i])
+	freq_S <- sum(whalesS[,i])
+
+	sfs[freq_N+1,freq_S+1] <- sfs[freq_N+1,freq_S+1] + 1
+
+}
+sfs[1,1] <- NA # ignore non-SNPs
+
+image(t(sfs))**********************************************************************
+
+Testing 03_Coalescence.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+The population with the greater population size has a higher proportion of singletons, as expected.
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 8.92593s
+
+======================================================================
+Inspecting script file 04_Demography.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: 04_Demography.R
+# Desc: inferring the history of a population of sea turtles
+# Arguments: 0
+# Date: Nov 2019
+
+turtle <- as.matrix(read.csv("../data/turtle.csv", header = FALSE, stringsAsFactors= FALSE))
+#calculate freq
+fa <- apply(X=turtle[1:20,], MAR=2, FUN=sum)
+fa <- fa/20
+
+fb <- apply(X=turtle[21:40,], MAR=2, FUN=sum)
+fb <- fb/20
+
+fc <- apply(X=turtle[41:60,], MAR=2, FUN=sum)
+fc <- fc/20
+
+fd <- apply(X=turtle[61:80,], MAR=2, FUN=sum)
+fd <- fd/20
+
+#Fst ab
+Hs_ab <- (2*fa*(1-fa) + 2*fb*(1-fb))/2
+Ht_ab <- 2 *(fa+fb)*(1-(fa+fb)/2)/2
+FST_ab <- (Ht_ab-Hs_ab)/Ht_ab
+FST_ab <- mean(FST_ab, na.rm=TRUE)
+
+#FST ac
+Hs_ac <- (2*fa*(1-fa) + 2*fc*(1-fc))/2
+Ht_ac <- 2 *(fa+fc)*(1-(fa+fc)/2)/2
+FST_ac <- (Ht_ac-Hs_ac)/Ht_ac
+FST_ac <- mean(FST_ac, na.rm=TRUE)
+
+#FST ad
+Hs_ad <- (2*fa*(1-fa) + 2*fd*(1-fd))/2
+Ht_ad <- 2 *(fa+fd)*(1-(fa+fd)/2)/2
+FST_ad <- (Ht_ad-Hs_ad)/Ht_ad
+FST_ad <- mean(FST_ad, na.rm=TRUE)
+
+#FST bc
+Hs_bc <- (2*fc*(1-fc) + 2*fb*(1-fb))/2
+Ht_bc <- 2 *(fc+fb)*(1-(fc+fb)/2)/2
+FST_bc <- (Ht_bc-Hs_bc)/Ht_bc
+FST_bc <- mean(FST_bc, na.rm=TRUE)
+
+#FST bd
+Hs_bd <- (2*fd*(1-fd) + 2*fb*(1-fb))/2
+Ht_bd <- 2 *(fd+fb)*(1-(fd+fb)/2)/2
+FST_bd <- (Ht_bd-Hs_bd)/Ht_bd
+FST_bd <- mean(FST_bd, na.rm=TRUE)
+
+#FST cd
+Hs_cd <- (2*fc*(1-fc) + 2*fd*(1-fd))/2
+Ht_cd <- 2 *(fc+fd)*(1-(fc+fd)/2)/2
+FST_cd <- (Ht_cd-Hs_cd)/Ht_cd
+FST_cd <- mean(FST_cd, na.rm=TRUE)
+
+
+#FST function
+FST_func <- function(fa,fb){
+  fa <- (apply(X=turtle[1:20,], MAR=2, FUN=sum))/nrow(fa)
+  fb <- (apply(X=turtle[1:20,], MAR=2, FUN=sum))/nrow(fb)
+  Hs_ab <- (2*fa*(1-fa) + 2*fb*(1-fb))/2
+  Ht_ab <- 2 *(fa+fb)*(1-(fa+fb)/2)/2
+  FST_ab <- (Ht_ab-Hs_ab)/Ht_ab
+  FST_ab <- mean(FST_ab, na.rm=TRUE)
+  
+  return(FST_ab)
+}
+
+
+snps <- which(apply(FUN=sum, X=turtle, MAR=2)/(nrow(turtle))>0.03)
+
+cat("\nFST value (average):",
+    "\nA vs B", mean(FST_func(turtle[1:20,snps], turtle[21:40,snps]), na.rm=T),
+    "\nA vs C", mean(FST_func(turtle[1:20,snps], turtle[41:60,snps]), na.rm=T),
+    "\nA vs D", mean(FST_func(turtle[1:20,snps], turtle[61:80,snps]), na.rm=T),
+    "\nB vs C", mean(FST_func(turtle[21:40,snps], turtle[41:60,snps]), na.rm=T),
+    "\nB vs D", mean(FST_func(turtle[21:40,snps], turtle[61:80,snps]), na.rm=T),
+    "\nC vs D", mean(FST_func(turtle[41:60,snps], turtle[61:80,snps]), na.rm=T),"\n")
+
+
+
+
+**********************************************************************
+
+Testing 04_Demography.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+FST value (average): 
+A vs B 0 
+A vs C 0 
+A vs D 0 
+B vs C 0 
+B vs D 0 
+C vs D 0 
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.33789s
+
+======================================================================
+Inspecting script file 02_Divergence.R...
+
+File contents are:
+**********************************************************************
+#!/bin/env Rscript
+
+# Author: Yuqing Zhou yz2919@imperial.ac.uk
+# Script: 02_Divergence.R
+# Desc: obtain an estimate of the divergence time bent-toed and western banded geckos 
+# Arguments: 0
+# Date: Nov 2019
+
+# geckos
+
+## read data for each specie
+
+len <- 20000
+
+data_w <- read.csv("../data/western_banded_gecko.csv", stringsAsFactors=F, header=F, colClasses=rep("character", len))
+dim(data_w)
+
+data_b <- read.csv("../data/bent-toed_gecko.csv", stringsAsFactors=F, header=F, colClasses=rep("character", len))
+dim(data_b)
+
+data_l <- read.csv("../data/leopard_gecko.csv", stringsAsFactors=F, header=F, colClasses=rep("character", len))
+dim(data_l)
+
+
+## calculate divergence between sequences of B and L
+
+sites_total <- 0
+sites_divergent <- 0 
+
+for (i in 1:ncol(data_b)) {
+
+	### you need to discard SNPs within each species
+	if (length(unique(data_b[,i]))==1 & length(unique(data_l[,i]))==1) {
+		
+		sites_total <- sites_total + 1
+
+		### if different, then it's a divergent site
+		if (data_b[1,i] != data_l[1,i]) sites_divergent <- sites_divergent + 1
+
+	}
+}
+### divergence rate
+div_rate_BL <- sites_divergent / sites_total
+
+
+## calculate divergence between sequences of W and L
+
+sites_total <- 0
+sites_divergent <- 0
+
+for (i in 1:ncol(data_w)) {
+
+        ### you need to discard SNPs within each species
+        if (length(unique(data_w[,i]))==1 & length(unique(data_l[,i]))==1) {
+
+                sites_total <- sites_total + 1
+
+                ### if different, then it's a divergent site
+                if (data_w[1,i] != data_l[1,i]) sites_divergent <- sites_divergent + 1
+
+        }
+}
+### divergence rate
+div_rate_WL <- sites_divergent / sites_total
+
+
+## calculate divergence between sequences of W and B
+
+sites_total <- 0
+sites_divergent <- 0
+
+for (i in 1:ncol(data_w)) {
+
+        ### you need to discard SNPs within each species
+        if (length(unique(data_w[,i]))==1 & length(unique(data_b[,i]))==1) {
+
+                sites_total <- sites_total + 1
+
+                ### if different, then it's a divergent site
+                if (data_w[1,i] != data_b[1,i]) sites_divergent <- sites_divergent + 1
+
+        }
+}
+### divergence rate
+div_rate_WB <- sites_divergent / sites_total
+
+
+## from these divergence rates we can infer that W and B are close species while L is the outgroup
+
+## estimate mutation rate per site per year
+mut_rate <- div_rate_BL / (2 * 5e7)
+
+
+## estimate divergence time
+div_time <- div_rate_WB / (2 * mut_rate)
+
+cat("\nThe two species have a divergence time of", div_time, "years.")
+cat("\nThe most likely species tree is L:(W:B).")**********************************************************************
+
+Testing 02_Divergence.R...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+[1]    20 20000
+[1]    20 20000
+[1]    20 20000
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 10.01155s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 0 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 100
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
