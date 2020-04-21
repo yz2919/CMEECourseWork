@@ -12,14 +12,13 @@
 rm(list = ls()) #clear workspace
 graphics.off()
 options(warn=-1)
-library(tidyr)
-#library(ggplot2)
+library("tidyr")
 library(minpack.lm)
 library("readr")
 library("dplyr")
 
 # Opens the modified dataset from previous step.
-data <- read.csv("../Data/Sorteddata.csv", header = TRUE)
+data <- read.csv("../data/Sorteddata.csv", header = TRUE)
 data$Temp <- as.factor(data$Temp) #Making the temperature values factors - categorical instead of continuous
 
 
@@ -172,12 +171,18 @@ for (i in 1:length(dsub$data)){
   
   ### Predicting
   timepoints <- seq(from = min(data_fit$Time), to = max(data_fit$Time), length.out = 200) #x-axis for the models
+  ### rmax dataframe
+  #rmax_df = data.frame("Gompertz"=rep(NA,length(ID)),"Baranyi"=rep(NA,length(ID)),"Buchanan"=rep(NA,length(ID)))  
+
   
   cubic_points <- predict.lm(fit_cubic, data.frame(Time = timepoints)) 
   df1 <- data.frame(ID, timepoints, cubic_points) # x and y coords
   df1$model <- "Cubic" 
   names(df1) <- c("ID","timepoints", "predict_log10N", "model") 
   model_frame <- df1  
+  #rmax_1<-data.frame(ID,"NA","Cubic")
+  #names(rmax_1) <- c("ID","rmax", "model")
+  #rmax_df <- rmax_1
   
   if(logistic_AIC != "NA" && is.infinite(logistic_AIC) == FALSE){ 
     logistic_points <- logistic_model(t = timepoints, r_max = coef(fit_logistic)["r_max"], N_max = coef(fit_logistic)["N_max"], N_0 = coef(fit_logistic)["N_0"])
@@ -185,13 +190,20 @@ for (i in 1:length(dsub$data)){
     df2$model <- "Logistic"
     names(df2) <- c("ID","timepoints", "predict_log10N", "model")
     model_frame <- rbind(model_frame, df2)
-  }
+    rmax_2 <- data.frame(ID,coef(fit_logistic)["r_max"],"Logistic")
+    names(rmax_2) <- c("ID","rmax", "model")
+    rmax_df <- rmax_2
+    
+  } 
   if(logisticlag_AIC != "NA" && is.infinite(logisticlag_AIC) == FALSE){ 
     logisticlag_points <- logisticlag_model(t = timepoints, r_max = coef(fit_logisticlag)["r_max"], N_max = coef(fit_logisticlag)["N_max"], N_0 = coef(fit_logisticlag)["N_0"], t_lag = coef(fit_logisticlag)["t_lag"])
     df3 <- data.frame(ID, timepoints, logisticlag_points)
     df3$model <- "Logisticlag"
     names(df3) <- c("ID","timepoints", "predict_log10N", "model")
     model_frame <- rbind(model_frame, df3)
+    rmax_3 <-data.frame(ID,coef(fit_logisticlag)["r_max"],"Logisticlag")
+    names(rmax_3) <- c("ID","rmax", "model")
+    rmax_df <- rbind(rmax_df, rmax_3)
   }
   if(gompertz_AIC != "NA" && is.infinite(gompertz_AIC) == FALSE){ 
     gompertz_points <- gompertz_model(t = timepoints, r_max = coef(fit_gompertz)["r_max"], N_max = coef(fit_gompertz)["N_max"], N_0 = coef(fit_gompertz)["N_0"], t_lag = coef(fit_gompertz)["t_lag"])
@@ -199,6 +211,9 @@ for (i in 1:length(dsub$data)){
     df4$model <- "Gompertz"
     names(df4) <- c("ID","timepoints", "predict_log10N", "model")
     model_frame <- rbind(model_frame, df4)
+    rmax_4 <-data.frame(ID,coef(fit_gompertz)["r_max"],"Gompertz")
+    names(rmax_4) <- c("ID","rmax", "model")
+    rmax_df <- rbind(rmax_df, rmax_4)
   }
   if(baranyi_AIC != "NA" && is.infinite(baranyi_AIC) == FALSE){ 
     baranyi_points <- baranyi_model(t = timepoints, r_max = coef(fit_baranyi)["r_max"], N_max = coef(fit_baranyi)["N_max"], N_0 = coef(fit_baranyi)["N_0"], t_lag = coef(fit_baranyi)["t_lag"])
@@ -206,6 +221,9 @@ for (i in 1:length(dsub$data)){
     df5$model <- "Baranyi"
     names(df5) <- c("ID","timepoints", "predict_log10N", "model")
     model_frame <- rbind(model_frame, df5)
+    rmax_5 <-data.frame(ID,coef(fit_baranyi)["r_max"],"Baranyi")
+    names(rmax_5) <- c("ID","rmax", "model")
+    rmax_df <- rbind(rmax_df, rmax_5)
   }
   if(buchanan_AIC != "NA" && is.infinite(buchanan_AIC) == FALSE){ 
     buchanan_points <- buchanan_model(t = timepoints, r_max = coef(fit_buchanan)["r_max"], N_max = coef(fit_buchanan)["N_max"], N_0 = coef(fit_buchanan)["N_0"], t_lag = coef(fit_buchanan)["t_lag"])
@@ -213,13 +231,17 @@ for (i in 1:length(dsub$data)){
     df6$model <- "Buchanan"
     names(df6) <- c("ID","timepoints", "predict_log10N", "model")
     model_frame <- rbind(model_frame, df6)
+    rmax_6 <-data.frame(ID,coef(fit_buchanan)["r_max"],"Buchanan")
+    names(rmax_6) <- c("ID","rmax", "model")
+    rmax_df <- rbind(rmax_df, rmax_6)
   }
 
   ### save stats
   save(fit_cubic,fit_logistic, fit_logisticlag, fit_gompertz, fit_buchanan, fit_baranyi, file = "../data/fittings.RData")
   model_stats <- rbind(df_cubic,df_logistic, df_logisticlag, df_gompertz, df_baranyi, df_buchanan)
   write.csv(model_stats, paste0("../results/model_stats_",i,".csv"))
-  save(model_frame, file = "../data/predicts.RData")
+  #save(model_frame, file = "../data/predicts.RData")
+  write.csv(rmax_df, paste0("../data/rmax_",i,".csv"))
   write.csv(model_frame, paste0("../results/plotting_",i,".csv"))
 }
 
@@ -231,8 +253,13 @@ plotting <- list.files(path = "../results/", pattern=glob2rx("plotting*.csv"), f
   lapply(read_csv) %>%
   bind_rows
 
+rmax <-list.files(path = "../data/", pattern=glob2rx("rmax_*.csv"), full.names = TRUE) %>%
+  lapply(read_csv) %>%
+  bind_rows
+
 write.csv(model_stats, ("../results/fitting.csv"))
 write.csv(plotting, ("../results/plotting.csv"))
+write.csv(rmax, ("../results/rmax.csv"))
 
 #For both AIC and BIC, If model A has AIC lower by 2-3 or more than
 #model B, it’s better — Differences of less than 2-3 don’t really matter
